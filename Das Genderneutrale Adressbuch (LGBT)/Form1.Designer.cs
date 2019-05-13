@@ -59,7 +59,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBoxtyp = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -81,6 +80,7 @@
             this.textBoxplz = new System.Windows.Forms.TextBox();
             this.textBoxAlter = new System.Windows.Forms.TextBox();
             this.textBoxpk = new System.Windows.Forms.TextBox();
+            this.comboBoxgender = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -381,13 +381,6 @@
             this.label24.TabIndex = 40;
             this.label24.Text = "Best. Nr. (PK)";
             // 
-            // textBoxtyp
-            // 
-            this.textBoxtyp.Location = new System.Drawing.Point(677, 73);
-            this.textBoxtyp.Name = "textBoxtyp";
-            this.textBoxtyp.Size = new System.Drawing.Size(46, 20);
-            this.textBoxtyp.TabIndex = 85;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -563,13 +556,37 @@
             this.textBoxpk.Size = new System.Drawing.Size(100, 20);
             this.textBoxpk.TabIndex = 63;
             // 
+            // comboBoxgender
+            // 
+            this.comboBoxgender.FormattingEnabled = true;
+            this.comboBoxgender.Items.AddRange(new object[] {
+            "Mänlein",
+            "Weiblein",
+            "Atack Helicopter",
+            "Eine Planze",
+            "Baum",
+            "Der Tot",
+            "Jesus",
+            "Gott",
+            "Gehrin",
+            "Mensch",
+            "Meerschweinchen",
+            "Katze",
+            "Hund",
+            "Mänlich mit Weiblichen geschlechtsmerkmale",
+            "Alex"});
+            this.comboBoxgender.Location = new System.Drawing.Point(677, 72);
+            this.comboBoxgender.Name = "comboBoxgender";
+            this.comboBoxgender.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxgender.TabIndex = 86;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 540);
+            this.Controls.Add(this.comboBoxgender);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBoxtyp);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -633,7 +650,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBoxtyp;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -655,6 +671,7 @@
         private System.Windows.Forms.TextBox textBoxplz;
         private System.Windows.Forms.TextBox textBoxAlter;
         private System.Windows.Forms.TextBox textBoxpk;
+        private System.Windows.Forms.ComboBox comboBoxgender;
     }
 }
 

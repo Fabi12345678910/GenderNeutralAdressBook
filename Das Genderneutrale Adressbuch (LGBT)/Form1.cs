@@ -141,7 +141,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 Convert.ToString(textBoxort.Text),
                 Convert.ToString(textBoxlstatus.Text),
                 Convert.ToString(textBoxlnickname.Text),
-                textBoxtyp.Text);
+                comboBoxgender.Text);
 
             textBoxpk.Text = "";
             textBoxAlter.Text = "";
@@ -151,7 +151,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxort.Text = "";
             textBoxlstatus.Text = "";
             textBoxlnickname.Text = "";
-            textBoxtyp.Text = "";
+            comboBoxgender.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
