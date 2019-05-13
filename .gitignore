@@ -1,6 +1,6 @@
 # Don't track content of these folders
 #node_modules/
 #someOtherfoler/
-Das Genderneutrale Adressbuch (LGBT)/bin/Debug/
-Das Genderneutrale Adressbuch (LGBT)/obj/Debug/
+"Das Genderneutrale Adressbuch (LGBT)"/bin/Debug/
+"Das Genderneutrale Adressbuch (LGBT)"/obj/Debug/
 .vs/
