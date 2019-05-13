@@ -109,8 +109,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 List<Artikel> artikel = new List<Artikel>();
                 String[] zeilen = File.ReadAllLines(Datei);
-                foreach (String zeile in zeilen)
+                
+                foreach (String zeile in zeilen.Skip(1))
                 {
+
                     String[] data = zeile.Split(';');
                     Artikel a = new Artikel();
                     a.id = data[0];
@@ -172,7 +174,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             int anzahl = tabelle.Length;
             for (; index < anzahl; index++)
             {
-                savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname, tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname, 
+                    tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
             }
         }
 
@@ -209,6 +212,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button8_Click(object sender, EventArgs e)
         {
             textBoxastaus.ReadOnly = false;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
