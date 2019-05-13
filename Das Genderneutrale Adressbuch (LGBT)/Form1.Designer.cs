@@ -35,16 +35,16 @@
             this.textBoxl2a = new System.Windows.Forms.TextBox();
             this.textBoxl1a = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
-            this.textBoxea = new System.Windows.Forms.TextBox();
+            this.textBoxaort = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.textBoxd2a = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBoxla = new System.Windows.Forms.TextBox();
+            this.textBoxavorname = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBoxdmina = new System.Windows.Forms.TextBox();
+            this.textBoxaplz = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxda = new System.Windows.Forms.TextBox();
+            this.textBoxaalter = new System.Windows.Forms.TextBox();
             this.labelpk = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -87,16 +87,16 @@
             this.groupBox1.Controls.Add(this.textBoxl2a);
             this.groupBox1.Controls.Add(this.textBoxl1a);
             this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.textBoxea);
+            this.groupBox1.Controls.Add(this.textBoxaort);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.textBoxd2a);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBoxla);
+            this.groupBox1.Controls.Add(this.textBoxavorname);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.textBoxdmina);
+            this.groupBox1.Controls.Add(this.textBoxaplz);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBoxda);
+            this.groupBox1.Controls.Add(this.textBoxaalter);
             this.groupBox1.Controls.Add(this.labelpk);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label18);
@@ -145,7 +145,7 @@
             this.textBoxl2a.Location = new System.Drawing.Point(565, 59);
             this.textBoxl2a.Name = "textBoxl2a";
             this.textBoxl2a.ReadOnly = true;
-            this.textBoxl2a.Size = new System.Drawing.Size(37, 20);
+            this.textBoxl2a.Size = new System.Drawing.Size(65, 20);
             this.textBoxl2a.TabIndex = 73;
             // 
             // textBoxl1a
@@ -164,14 +164,15 @@
             this.button7.TabIndex = 71;
             this.button7.Text = "x";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // textBoxea
+            // textBoxaort
             // 
-            this.textBoxea.Location = new System.Drawing.Point(416, 62);
-            this.textBoxea.Name = "textBoxea";
-            this.textBoxea.ReadOnly = true;
-            this.textBoxea.Size = new System.Drawing.Size(37, 20);
-            this.textBoxea.TabIndex = 70;
+            this.textBoxaort.Location = new System.Drawing.Point(416, 62);
+            this.textBoxaort.Name = "textBoxaort";
+            this.textBoxaort.ReadOnly = true;
+            this.textBoxaort.Size = new System.Drawing.Size(37, 20);
+            this.textBoxaort.TabIndex = 70;
             // 
             // button6
             // 
@@ -181,6 +182,7 @@
             this.button6.TabIndex = 69;
             this.button6.Text = "x";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBoxd2a
             // 
@@ -198,14 +200,15 @@
             this.button5.TabIndex = 67;
             this.button5.Text = "x";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBoxla
+            // textBoxavorname
             // 
-            this.textBoxla.Location = new System.Drawing.Point(271, 62);
-            this.textBoxla.Name = "textBoxla";
-            this.textBoxla.ReadOnly = true;
-            this.textBoxla.Size = new System.Drawing.Size(37, 20);
-            this.textBoxla.TabIndex = 66;
+            this.textBoxavorname.Location = new System.Drawing.Point(271, 62);
+            this.textBoxavorname.Name = "textBoxavorname";
+            this.textBoxavorname.ReadOnly = true;
+            this.textBoxavorname.Size = new System.Drawing.Size(37, 20);
+            this.textBoxavorname.TabIndex = 66;
             // 
             // button4
             // 
@@ -215,14 +218,15 @@
             this.button4.TabIndex = 65;
             this.button4.Text = "x";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // textBoxdmina
+            // textBoxaplz
             // 
-            this.textBoxdmina.Location = new System.Drawing.Point(205, 62);
-            this.textBoxdmina.Name = "textBoxdmina";
-            this.textBoxdmina.ReadOnly = true;
-            this.textBoxdmina.Size = new System.Drawing.Size(37, 20);
-            this.textBoxdmina.TabIndex = 64;
+            this.textBoxaplz.Location = new System.Drawing.Point(205, 62);
+            this.textBoxaplz.Name = "textBoxaplz";
+            this.textBoxaplz.ReadOnly = true;
+            this.textBoxaplz.Size = new System.Drawing.Size(46, 20);
+            this.textBoxaplz.TabIndex = 64;
             // 
             // button3
             // 
@@ -232,6 +236,7 @@
             this.button3.TabIndex = 63;
             this.button3.Text = "x";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label10
             // 
@@ -242,13 +247,13 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "gender";
             // 
-            // textBoxda
+            // textBoxaalter
             // 
-            this.textBoxda.Location = new System.Drawing.Point(142, 62);
-            this.textBoxda.Name = "textBoxda";
-            this.textBoxda.ReadOnly = true;
-            this.textBoxda.Size = new System.Drawing.Size(46, 20);
-            this.textBoxda.TabIndex = 60;
+            this.textBoxaalter.Location = new System.Drawing.Point(142, 62);
+            this.textBoxaalter.Name = "textBoxaalter";
+            this.textBoxaalter.ReadOnly = true;
+            this.textBoxaalter.Size = new System.Drawing.Size(46, 20);
+            this.textBoxaalter.TabIndex = 60;
             // 
             // labelpk
             // 
@@ -526,7 +531,7 @@
             "Alex"});
             this.comboBoxgender.Location = new System.Drawing.Point(677, 72);
             this.comboBoxgender.Name = "comboBoxgender";
-            this.comboBoxgender.Size = new System.Drawing.Size(194, 21);
+            this.comboBoxgender.Size = new System.Drawing.Size(154, 21);
             this.comboBoxgender.TabIndex = 86;
             // 
             // Form1
@@ -575,16 +580,16 @@
         private System.Windows.Forms.TextBox textBoxl2a;
         private System.Windows.Forms.TextBox textBoxl1a;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.TextBox textBoxea;
+        private System.Windows.Forms.TextBox textBoxaort;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBoxd2a;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBoxla;
+        private System.Windows.Forms.TextBox textBoxavorname;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBoxdmina;
+        private System.Windows.Forms.TextBox textBoxaplz;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxda;
+        private System.Windows.Forms.TextBox textBoxaalter;
         private System.Windows.Forms.Label labelpk;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
