@@ -1,4 +1,5 @@
 # Don't track content of these folders
 #node_modules/
 #someOtherfoler/
-bin/Debug/
+Das Genderneutrale Adressbuch (LGBT)/bin/Debug/
+.vs/
