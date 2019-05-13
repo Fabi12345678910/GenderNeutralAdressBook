@@ -577,7 +577,7 @@
             "Alex"});
             this.comboBoxgender.Location = new System.Drawing.Point(677, 72);
             this.comboBoxgender.Name = "comboBoxgender";
-            this.comboBoxgender.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxgender.Size = new System.Drawing.Size(194, 21);
             this.comboBoxgender.TabIndex = 86;
             // 
             // Form1
