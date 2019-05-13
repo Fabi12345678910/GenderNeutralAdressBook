@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelt = new System.Windows.Forms.Label();
+            this.labelGender = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBoxl2a = new System.Windows.Forms.TextBox();
@@ -45,11 +45,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxda = new System.Windows.Forms.TextBox();
-            this.labelf = new System.Windows.Forms.Label();
-            this.Bestellen = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxa = new System.Windows.Forms.TextBox();
-            this.textBoxf = new System.Windows.Forms.TextBox();
             this.labelpk = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -86,7 +81,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.labelt);
+            this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.textBoxl2a);
@@ -102,11 +97,6 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.textBoxda);
-            this.groupBox1.Controls.Add(this.labelf);
-            this.groupBox1.Controls.Add(this.Bestellen);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBoxa);
-            this.groupBox1.Controls.Add(this.textBoxf);
             this.groupBox1.Controls.Add(this.labelpk);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label18);
@@ -118,19 +108,19 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(32, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(706, 193);
+            this.groupBox1.Size = new System.Drawing.Size(838, 193);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Besstellungen";
+            this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
             // 
-            // labelt
+            // labelGender
             // 
-            this.labelt.AutoSize = true;
-            this.labelt.Location = new System.Drawing.Point(622, 65);
-            this.labelt.Name = "labelt";
-            this.labelt.Size = new System.Drawing.Size(0, 13);
-            this.labelt.TabIndex = 76;
+            this.labelGender.AutoSize = true;
+            this.labelGender.Location = new System.Drawing.Point(642, 62);
+            this.labelGender.Name = "labelGender";
+            this.labelGender.Size = new System.Drawing.Size(0, 13);
+            this.labelGender.TabIndex = 76;
             // 
             // button9
             // 
@@ -246,7 +236,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(622, 28);
+            this.label10.Location = new System.Drawing.Point(660, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 0;
@@ -259,47 +249,6 @@
             this.textBoxda.ReadOnly = true;
             this.textBoxda.Size = new System.Drawing.Size(46, 20);
             this.textBoxda.TabIndex = 60;
-            // 
-            // labelf
-            // 
-            this.labelf.AutoSize = true;
-            this.labelf.Location = new System.Drawing.Point(139, 125);
-            this.labelf.Name = "labelf";
-            this.labelf.Size = new System.Drawing.Size(39, 13);
-            this.labelf.TabIndex = 58;
-            this.labelf.Text = "Anzahl";
-            // 
-            // Bestellen
-            // 
-            this.Bestellen.Location = new System.Drawing.Point(271, 149);
-            this.Bestellen.Name = "Bestellen";
-            this.Bestellen.Size = new System.Drawing.Size(75, 23);
-            this.Bestellen.TabIndex = 35;
-            this.Bestellen.Text = "Bestellen";
-            this.Bestellen.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 125);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(32, 13);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Firma";
-            // 
-            // textBoxa
-            // 
-            this.textBoxa.Location = new System.Drawing.Point(142, 152);
-            this.textBoxa.Name = "textBoxa";
-            this.textBoxa.Size = new System.Drawing.Size(80, 20);
-            this.textBoxa.TabIndex = 56;
-            // 
-            // textBoxf
-            // 
-            this.textBoxf.Location = new System.Drawing.Point(6, 152);
-            this.textBoxf.Name = "textBoxf";
-            this.textBoxf.Size = new System.Drawing.Size(100, 20);
-            this.textBoxf.TabIndex = 35;
             // 
             // labelpk
             // 
@@ -377,9 +326,9 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(12, 28);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(71, 13);
+            this.label24.Size = new System.Drawing.Size(64, 13);
             this.label24.TabIndex = 40;
-            this.label24.Text = "Best. Nr. (PK)";
+            this.label24.Text = "Id vom User";
             // 
             // label11
             // 
@@ -406,7 +355,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 81;
-            this.button1.Text = "Artikel Speichern";
+            this.button1.Text = "UserSpeichern";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -620,7 +569,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelt;
+        private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBoxl2a;
@@ -636,11 +585,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxda;
-        private System.Windows.Forms.Label labelf;
-        private System.Windows.Forms.Button Bestellen;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxa;
-        private System.Windows.Forms.TextBox textBoxf;
         private System.Windows.Forms.Label labelpk;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
