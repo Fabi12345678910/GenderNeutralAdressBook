@@ -76,11 +76,13 @@
             this.textBoxAlter = new System.Windows.Forms.TextBox();
             this.textBoxpk = new System.Windows.Forms.TextBox();
             this.comboBoxgender = new System.Windows.Forms.ComboBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.button8);
@@ -108,7 +110,7 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(32, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(887, 193);
+            this.groupBox1.Size = new System.Drawing.Size(1112, 193);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
@@ -117,7 +119,7 @@
             // labelGender
             // 
             this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(642, 62);
+            this.labelGender.Location = new System.Drawing.Point(777, 59);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(0, 13);
             this.labelGender.TabIndex = 76;
@@ -538,11 +540,22 @@
             this.comboBoxgender.Size = new System.Drawing.Size(159, 21);
             this.comboBoxgender.TabIndex = 82;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(25, 164);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(101, 23);
+            this.button10.TabIndex = 86;
+            this.button10.Text = "User updaten";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 540);
+            this.BackColor = System.Drawing.Color.Fuchsia;
+            this.ClientSize = new System.Drawing.Size(1221, 540);
             this.Controls.Add(this.comboBoxgender);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label11);
@@ -625,6 +638,7 @@
         private System.Windows.Forms.TextBox textBoxAlter;
         private System.Windows.Forms.TextBox textBoxpk;
         private System.Windows.Forms.ComboBox comboBoxgender;
+        private System.Windows.Forms.Button button10;
     }
 }
 

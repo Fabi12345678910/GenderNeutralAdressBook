@@ -77,6 +77,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
                     textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxNickname.Text = tabelle[tempint].nickname;
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
 
@@ -98,6 +99,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
                     textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxNickname.Text = tabelle[tempint].nickname;
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
                 }
@@ -129,8 +131,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 List<Artikel> artikel = new List<Artikel>();
                 String[] zeilen = File.ReadAllLines(Datei);
-                foreach (String zeile in zeilen)
+                
+                foreach (String zeile in zeilen.Skip(1))
                 {
+
                     String[] data = zeile.Split(';');
                     Artikel a = new Artikel();
                     a.id = data[0];
@@ -183,16 +187,20 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 Pfad = openFileDialog1.FileName;
             labelerror.Text = Pfad;
-            var tabelle = Tabelle.getTabel(Pfad);
-            int index = 0;
-            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
+            if (Pfad != "")
             {
-                streamWriter.WriteLine("");
-            }
-            int anzahl = tabelle.Length;
-            for (; index < anzahl; index++)
-            {
-                savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname, tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                var tabelle = Tabelle.getTabel(Pfad);
+                int index = 0;
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
+                {
+                    streamWriter.WriteLine("");
+                }
+                int anzahl = tabelle.Length;
+                for (; index < anzahl; index++)
+                {
+                    savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                        tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                }
             }
         }
 
@@ -231,6 +239,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxastaus.ReadOnly = false;
         }
 
+<<<<<<< HEAD
         private void textBoxplz_TextChanged(object sender, EventArgs e)
         {
             foreach(Postleitzahl tmp in plz_liste)
@@ -243,6 +252,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     }
                 }
             }
+=======
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> f9ffff09075a6189f78e5488cdb0bda6d8371bea
         }
     }
 }
