@@ -239,10 +239,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxastaus.ReadOnly = false;
         }
 
-<<<<<<< HEAD
         private void textBoxplz_TextChanged(object sender, EventArgs e)
         {
-            foreach(Postleitzahl tmp in plz_liste)
+            foreach (Postleitzahl tmp in plz_liste)
             {
                 if (textBoxplz.Text != "")
                 {
@@ -252,11 +251,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     }
                 }
             }
-=======
+        }
         private void button10_Click(object sender, EventArgs e)
         {
-
->>>>>>> f9ffff09075a6189f78e5488cdb0bda6d8371bea
+            
         }
     }
 }
