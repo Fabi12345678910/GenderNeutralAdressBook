@@ -32,8 +32,8 @@
             this.labelGender = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.textBoxl2a = new System.Windows.Forms.TextBox();
-            this.textBoxl1a = new System.Windows.Forms.TextBox();
+            this.textBoxNickname = new System.Windows.Forms.TextBox();
+            this.textBoxastaus = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.textBoxaort = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -84,8 +84,8 @@
             this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.textBoxl2a);
-            this.groupBox1.Controls.Add(this.textBoxl1a);
+            this.groupBox1.Controls.Add(this.textBoxNickname);
+            this.groupBox1.Controls.Add(this.textBoxastaus);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.textBoxaort);
             this.groupBox1.Controls.Add(this.button6);
@@ -124,41 +124,43 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(595, 88);
+            this.button9.Location = new System.Drawing.Point(614, 88);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(16, 23);
             this.button9.TabIndex = 75;
             this.button9.Text = "x";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(521, 88);
+            this.button8.Location = new System.Drawing.Point(533, 88);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(16, 23);
             this.button8.TabIndex = 74;
             this.button8.Text = "x";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // textBoxl2a
+            // textBoxNickname
             // 
-            this.textBoxl2a.Location = new System.Drawing.Point(565, 59);
-            this.textBoxl2a.Name = "textBoxl2a";
-            this.textBoxl2a.ReadOnly = true;
-            this.textBoxl2a.Size = new System.Drawing.Size(65, 20);
-            this.textBoxl2a.TabIndex = 73;
+            this.textBoxNickname.Location = new System.Drawing.Point(617, 62);
+            this.textBoxNickname.Name = "textBoxNickname";
+            this.textBoxNickname.ReadOnly = true;
+            this.textBoxNickname.Size = new System.Drawing.Size(65, 20);
+            this.textBoxNickname.TabIndex = 73;
             // 
-            // textBoxl1a
+            // textBoxastaus
             // 
-            this.textBoxl1a.Location = new System.Drawing.Point(491, 59);
-            this.textBoxl1a.Name = "textBoxl1a";
-            this.textBoxl1a.ReadOnly = true;
-            this.textBoxl1a.Size = new System.Drawing.Size(37, 20);
-            this.textBoxl1a.TabIndex = 72;
+            this.textBoxastaus.Location = new System.Drawing.Point(533, 59);
+            this.textBoxastaus.Name = "textBoxastaus";
+            this.textBoxastaus.ReadOnly = true;
+            this.textBoxastaus.Size = new System.Drawing.Size(68, 20);
+            this.textBoxastaus.TabIndex = 72;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(446, 88);
+            this.button7.Location = new System.Drawing.Point(431, 88);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(16, 23);
             this.button7.TabIndex = 71;
@@ -168,10 +170,10 @@
             // 
             // textBoxaort
             // 
-            this.textBoxaort.Location = new System.Drawing.Point(416, 62);
+            this.textBoxaort.Location = new System.Drawing.Point(431, 62);
             this.textBoxaort.Name = "textBoxaort";
             this.textBoxaort.ReadOnly = true;
-            this.textBoxaort.Size = new System.Drawing.Size(37, 20);
+            this.textBoxaort.Size = new System.Drawing.Size(79, 20);
             this.textBoxaort.TabIndex = 70;
             // 
             // button6
@@ -189,7 +191,7 @@
             this.textBoxd2a.Location = new System.Drawing.Point(343, 62);
             this.textBoxd2a.Name = "textBoxd2a";
             this.textBoxd2a.ReadOnly = true;
-            this.textBoxd2a.Size = new System.Drawing.Size(37, 20);
+            this.textBoxd2a.Size = new System.Drawing.Size(82, 20);
             this.textBoxd2a.TabIndex = 68;
             // 
             // button5
@@ -207,7 +209,7 @@
             this.textBoxavorname.Location = new System.Drawing.Point(271, 62);
             this.textBoxavorname.Name = "textBoxavorname";
             this.textBoxavorname.ReadOnly = true;
-            this.textBoxavorname.Size = new System.Drawing.Size(37, 20);
+            this.textBoxavorname.Size = new System.Drawing.Size(56, 20);
             this.textBoxavorname.TabIndex = 66;
             // 
             // button4
@@ -241,7 +243,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(660, 28);
+            this.label10.Location = new System.Drawing.Point(726, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 0;
@@ -266,7 +268,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(577, 28);
+            this.label17.Location = new System.Drawing.Point(614, 28);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 13);
             this.label17.TabIndex = 47;
@@ -275,7 +277,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(428, 28);
+            this.label18.Location = new System.Drawing.Point(463, 28);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(19, 13);
             this.label18.TabIndex = 46;
@@ -284,7 +286,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(503, 28);
+            this.label19.Location = new System.Drawing.Point(545, 28);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(37, 13);
             this.label19.TabIndex = 45;
@@ -302,11 +304,11 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(355, 28);
+            this.label21.Location = new System.Drawing.Point(340, 28);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(19, 13);
+            this.label21.Size = new System.Drawing.Size(59, 13);
             this.label21.TabIndex = 43;
-            this.label21.Text = "d2";
+            this.label21.Text = "Nachname";
             // 
             // label22
             // 
@@ -531,7 +533,7 @@
             "Alex"});
             this.comboBoxgender.Location = new System.Drawing.Point(677, 72);
             this.comboBoxgender.Name = "comboBoxgender";
-            this.comboBoxgender.Size = new System.Drawing.Size(154, 21);
+            this.comboBoxgender.Size = new System.Drawing.Size(159, 21);
             this.comboBoxgender.TabIndex = 82;
             // 
             // Form1
@@ -577,8 +579,8 @@
         private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBoxl2a;
-        private System.Windows.Forms.TextBox textBoxl1a;
+        private System.Windows.Forms.TextBox textBoxNickname;
+        private System.Windows.Forms.TextBox textBoxastaus;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBoxaort;
         private System.Windows.Forms.Button button6;

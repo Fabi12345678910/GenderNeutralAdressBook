@@ -56,7 +56,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxavorname.Text = Convert.ToString(tabelle[tempint].vorname);
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
-                    textBoxl1a.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
 
@@ -77,7 +77,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxavorname.Text = Convert.ToString(tabelle[tempint].vorname);
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
-                    textBoxl1a.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
                 }
@@ -199,6 +199,16 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button7_Click(object sender, EventArgs e)
         {
             textBoxaort.ReadOnly = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            textBoxNickname.ReadOnly = false;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            textBoxastaus.ReadOnly = false;
         }
     }
 }
