@@ -57,6 +57,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
                     textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxNickname.Text = tabelle[tempint].nickname;
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
 
@@ -78,6 +79,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
                     textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
                     textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
+                    textBoxNickname.Text = tabelle[tempint].nickname;
                     labelGender.Text = tabelle[tempint].gender;
                     groupBox1.Visible = true;
                 }
@@ -165,17 +167,20 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 Pfad = openFileDialog1.FileName;
             labelerror.Text = Pfad;
-            var tabelle = Tabelle.getTabel(Pfad);
-            int index = 0;
-            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
+            if (Pfad != "")
             {
-                streamWriter.WriteLine("");
-            }
-            int anzahl = tabelle.Length;
-            for (; index < anzahl; index++)
-            {
-                savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname, 
-                    tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                var tabelle = Tabelle.getTabel(Pfad);
+                int index = 0;
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
+                {
+                    streamWriter.WriteLine("");
+                }
+                int anzahl = tabelle.Length;
+                for (; index < anzahl; index++)
+                {
+                    savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                        tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                }
             }
         }
 
