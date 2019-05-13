@@ -349,7 +349,7 @@
             this.button2.Location = new System.Drawing.Point(383, 120);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 83;
+            this.button2.TabIndex = 85;
             this.button2.Text = "Synk";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -359,7 +359,7 @@
             this.button1.Location = new System.Drawing.Point(204, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 81;
+            this.button1.TabIndex = 84;
             this.button1.Text = "UserSpeichern";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -393,7 +393,7 @@
             this.buttonEingabe.Location = new System.Drawing.Point(32, 120);
             this.buttonEingabe.Name = "buttonEingabe";
             this.buttonEingabe.Size = new System.Drawing.Size(75, 23);
-            this.buttonEingabe.TabIndex = 77;
+            this.buttonEingabe.TabIndex = 83;
             this.buttonEingabe.Text = "Suchen";
             this.buttonEingabe.UseVisualStyleBackColor = true;
             this.buttonEingabe.Click += new System.EventHandler(this.buttonEingabe_Click);
@@ -532,7 +532,7 @@
             this.comboBoxgender.Location = new System.Drawing.Point(677, 72);
             this.comboBoxgender.Name = "comboBoxgender";
             this.comboBoxgender.Size = new System.Drawing.Size(154, 21);
-            this.comboBoxgender.TabIndex = 86;
+            this.comboBoxgender.TabIndex = 82;
             // 
             // Form1
             // 
