@@ -403,7 +403,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(445, 39);
+            this.label6.Location = new System.Drawing.Point(300, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 13);
             this.label6.TabIndex = 76;
@@ -421,7 +421,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(300, 39);
+            this.label4.Location = new System.Drawing.Point(446, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 74;
@@ -472,10 +472,11 @@
             // 
             // textBoxort
             // 
-            this.textBoxort.Location = new System.Drawing.Point(448, 73);
+            this.textBoxort.Enabled = false;
+            this.textBoxort.Location = new System.Drawing.Point(303, 73);
             this.textBoxort.Name = "textBoxort";
             this.textBoxort.Size = new System.Drawing.Size(46, 20);
-            this.textBoxort.TabIndex = 68;
+            this.textBoxort.TabIndex = 66;
             // 
             // textBoxdnachname
             // 
@@ -486,17 +487,18 @@
             // 
             // textBoxvorname
             // 
-            this.textBoxvorname.Location = new System.Drawing.Point(303, 73);
+            this.textBoxvorname.Location = new System.Drawing.Point(449, 73);
             this.textBoxvorname.Name = "textBoxvorname";
             this.textBoxvorname.Size = new System.Drawing.Size(46, 20);
-            this.textBoxvorname.TabIndex = 66;
+            this.textBoxvorname.TabIndex = 68;
             // 
             // textBoxplz
             // 
-            this.textBoxplz.Location = new System.Drawing.Point(228, 73);
+            this.textBoxplz.Location = new System.Drawing.Point(230, 73);
             this.textBoxplz.Name = "textBoxplz";
             this.textBoxplz.Size = new System.Drawing.Size(46, 20);
             this.textBoxplz.TabIndex = 65;
+            this.textBoxplz.TextChanged += new System.EventHandler(this.textBoxplz_TextChanged);
             // 
             // textBoxAlter
             // 

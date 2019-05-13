@@ -13,9 +13,29 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 {
     public partial class Form1 : Form
     {
-      
+        public struct Postleitzahl
+
+        {
+            public int PLZ;
+            public string OrtMitZusatz;
+            public string Bundesland;
+        }
+        List<Postleitzahl> plz_liste = new List<Postleitzahl>();
         public Form1()
         {
+            string[] zeilen = File.ReadAllLines("...\\plz_de.csv");
+            foreach(string PLZ in zeilen.Skip(1))
+            {
+                String[] data = PLZ.Split(';');
+                if (PLZ == "")
+                {
+                    continue;
+                }
+                Postleitzahl a = new Postleitzahl();
+                a.PLZ = int.Parse(data[2]);
+                a.OrtMitZusatz = data[0] + data[1];
+                plz_liste.Add(a);
+            }
             InitializeComponent();
         }
         string Pfad = string.Empty;
@@ -209,6 +229,20 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button8_Click(object sender, EventArgs e)
         {
             textBoxastaus.ReadOnly = false;
+        }
+
+        private void textBoxplz_TextChanged(object sender, EventArgs e)
+        {
+            foreach(Postleitzahl tmp in plz_liste)
+            {
+                if (textBoxplz.Text != "")
+                {
+                    if (tmp.PLZ == int.Parse(textBoxplz.Text))
+                    {
+                        textBoxort.Text = tmp.OrtMitZusatz;
+                    }
+                }
+            }
         }
     }
 }
