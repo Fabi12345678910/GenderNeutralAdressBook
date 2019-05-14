@@ -86,53 +86,37 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void buttonEingabe_Click(object sender, EventArgs e)
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
-            int index = 0;
             int anzahl = tabelle.Length;
-            string temp = textBoxpk.Text;
             int tempint = 0;
             liste_Suchergebnisse = new List<Artikel>();
-            for (; index < anzahl;)
+            for (int index = 0;index < anzahl;index++)
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-                
-                if (temp == tabelle[index].id) //Ergebnis passt.
+                if (textBoxpk.Text == tabelle[index].id 
+                    || textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
+                    || textBoxplz.Text == Convert.ToString(tabelle[index].plz)
+                    || textBoxvorname.Text == tabelle[index].vorname
+                    || textBoxdnachname.Text == tabelle[index].nachname
+                    || textBoxort.Text == tabelle[index].ort
+                    || textBoxlstatus.Text == tabelle[index].Status
+                    || textBoxlnickname.Text == tabelle[index].nickname)
                 {
                     liste_Suchergebnisse.Add(new Artikel(
-                        tabelle[index].id,
-                        tabelle[index].Alter,
-                        tabelle[index].plz,
-                        tabelle[index].vorname,
-                        tabelle[index].gender,
-                        tabelle[index].nachname,
-                        tabelle[index].ort,
-                        tabelle[index].Status,
-                        tabelle[index].nickname));
+                       tabelle[index].id,
+                       tabelle[index].Alter,
+                       tabelle[index].plz,
+                       tabelle[index].vorname,
+                       tabelle[index].gender,
+                       tabelle[index].nachname,
+                       tabelle[index].ort,
+                       tabelle[index].Status,
+                       tabelle[index].nickname));
                 }
-                //Eingabe über Abmasse
-                else if (textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
-                    & textBoxplz.Text == Convert.ToString(tabelle[index].plz)
-                    & textBoxvorname.Text == Convert.ToString(tabelle[index].vorname)
-                    & textBoxdnachname.Text == Convert.ToString(tabelle[index].nachname)
-                    & textBoxort.Text == Convert.ToString(tabelle[index].ort)
-                    & textBoxlstatus.Text == Convert.ToString(tabelle[index].Status)
-                    & textBoxlnickname.Text == Convert.ToString(tabelle[index].nickname))
-                {
-                    tempint = index;
-                    labelpk.Text = tabelle[tempint].id;
-                    textBoxaalter.Text = Convert.ToString(tabelle[tempint].Alter);
-                    textBoxaplz.Text = Convert.ToString(tabelle[tempint].plz);
-                    textBoxavorname.Text = Convert.ToString(tabelle[tempint].vorname);
-                    textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
-                    textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
-                    textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
-                    textBoxNickname.Text = tabelle[tempint].nickname;
-                    labelGender.Text = tabelle[tempint].gender;
-                    groupBox1.Visible = true;
-                }
-
-                index++;
             }
+
+            textBoxAnzahlErgebnisse.Text = Convert.ToString(liste_Suchergebnisse.Count);
+
             if (liste_Suchergebnisse.Count > 0)
             {
                 aktuellesSuchErgebnis = 0;

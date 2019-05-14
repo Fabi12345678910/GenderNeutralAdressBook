@@ -82,6 +82,8 @@
             this.comboBoxgender = new System.Windows.Forms.ComboBox();
             this.textBoxbund = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -125,18 +127,20 @@
             // 
             // groupBoxNavigation
             // 
+            this.groupBoxNavigation.Controls.Add(this.textBoxAnzahlErgebnisse);
+            this.groupBoxNavigation.Controls.Add(this.label12);
             this.groupBoxNavigation.Controls.Add(this.buttonvorwaerts);
             this.groupBoxNavigation.Controls.Add(this.buttonzurueck);
-            this.groupBoxNavigation.Location = new System.Drawing.Point(1015, 19);
+            this.groupBoxNavigation.Location = new System.Drawing.Point(1001, 19);
             this.groupBoxNavigation.Name = "groupBoxNavigation";
-            this.groupBoxNavigation.Size = new System.Drawing.Size(91, 100);
+            this.groupBoxNavigation.Size = new System.Drawing.Size(105, 168);
             this.groupBoxNavigation.TabIndex = 90;
             this.groupBoxNavigation.TabStop = false;
             this.groupBoxNavigation.Text = "Navigation";
             // 
             // buttonvorwaerts
             // 
-            this.buttonvorwaerts.Location = new System.Drawing.Point(6, 57);
+            this.buttonvorwaerts.Location = new System.Drawing.Point(21, 57);
             this.buttonvorwaerts.Name = "buttonvorwaerts";
             this.buttonvorwaerts.Size = new System.Drawing.Size(69, 35);
             this.buttonvorwaerts.TabIndex = 89;
@@ -146,7 +150,7 @@
             // 
             // buttonzurueck
             // 
-            this.buttonzurueck.Location = new System.Drawing.Point(6, 18);
+            this.buttonzurueck.Location = new System.Drawing.Point(21, 18);
             this.buttonzurueck.Name = "buttonzurueck";
             this.buttonzurueck.Size = new System.Drawing.Size(69, 35);
             this.buttonzurueck.TabIndex = 88;
@@ -604,6 +608,23 @@
             this.label9.TabIndex = 87;
             this.label9.Text = "Bundesland";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 95);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 13);
+            this.label12.TabIndex = 90;
+            this.label12.Text = "Anzahl Ergebnisse:";
+            // 
+            // textBoxAnzahlErgebnisse
+            // 
+            this.textBoxAnzahlErgebnisse.Location = new System.Drawing.Point(21, 111);
+            this.textBoxAnzahlErgebnisse.Name = "textBoxAnzahlErgebnisse";
+            this.textBoxAnzahlErgebnisse.ReadOnly = true;
+            this.textBoxAnzahlErgebnisse.Size = new System.Drawing.Size(69, 20);
+            this.textBoxAnzahlErgebnisse.TabIndex = 91;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,6 +661,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxNavigation.ResumeLayout(false);
+            this.groupBoxNavigation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -701,6 +723,8 @@
         private System.Windows.Forms.Button buttonvorwaerts;
         private System.Windows.Forms.Button buttonzurueck;
         private System.Windows.Forms.GroupBox groupBoxNavigation;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxAnzahlErgebnisse;
     }
 }
 
