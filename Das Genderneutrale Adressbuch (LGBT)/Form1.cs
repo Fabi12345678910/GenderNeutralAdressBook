@@ -54,8 +54,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String ort;
             public String Status;
             public String nickname;
+            public String straße;
+            public String tel;
+            public String HausNr;
+
             
-            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname)
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr )
             {
                 this.id = id;
                 this.Alter = Alter;
@@ -66,6 +70,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.ort = ort;
                 this.Status = Status;
                 this.nickname = nickname;
+                this.straße = straße;
+                this.tel = tel;
+                this.HausNr = HausNr;
             }
         }
         public void zeigeArtikel(Artikel artikel)
@@ -79,6 +86,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxastaus.Text = artikel.Status;
             textBoxNickname.Text = artikel.nickname;
             labelGender.Text = artikel.gender;
+            textBoxaStraße.Text = artikel.straße;
+            textBoxaHausNr.Text = artikel.HausNr;
+            textBoxatel.Text = artikel.tel;
             groupBox1.Visible = true;
         }
         private void buttonEingabe_Click(object sender, EventArgs e)
@@ -93,7 +103,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-                
+
                 if (temp == tabelle[index].id) //Ergebnis passt.
                 {
                     liste_Suchergebnisse.Add(new Artikel(
@@ -105,7 +115,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                         tabelle[index].nachname,
                         tabelle[index].ort,
                         tabelle[index].Status,
-                        tabelle[index].nickname));
+                        tabelle[index].nickname,
+                        tabelle[index].straße,
+                        tabelle[index].HausNr,
+                        tabelle[index].tel));
                 }
                 //Eingabe über Abmasse
                 else if (textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
@@ -114,7 +127,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     & textBoxdnachname.Text == Convert.ToString(tabelle[index].nachname)
                     & textBoxort.Text == Convert.ToString(tabelle[index].ort)
                     & textBoxlstatus.Text == Convert.ToString(tabelle[index].Status)
-                    & textBoxlnickname.Text == Convert.ToString(tabelle[index].nickname))
+                    & textBoxlnickname.Text == Convert.ToString(tabelle[index].nickname)
+                    & textBoxstraße.Text == tabelle[index].straße
+                    & textBoxaHausNr.Text == tabelle[index].HausNr
+                    & textBoxtel.Text == tabelle[index].tel)
                 {
                     tempint = index;
                     labelpk.Text = tabelle[tempint].id;
@@ -126,6 +142,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
                     textBoxNickname.Text = tabelle[tempint].nickname;
                     labelGender.Text = tabelle[tempint].gender;
+                    textBoxaStraße.Text = tabelle[index].straße;
+                   textBoxaHausNr.Text = tabelle[index].HausNr;
+                    textBoxatel.Text = tabelle[index].tel;
                     groupBox1.Visible = true;
                 }
 
@@ -143,12 +162,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         }
         //Artikle speicher logik
         public static void savecsv(string filepath, string id, int alter, int plz,
-            string vorname, string gender, string nachname, string ort, string Status, string nickname)
+            string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel )
         {
             //Erstelle  streamWriter
             using (StreamWriter streamWriter = new StreamWriter(filepath, true))
             {
-                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname);
+                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" + Hausnummar + ";" + tel);
 
             }
 
@@ -177,6 +196,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                         a.Status = Convert.ToString(data[6]);
                         a.nickname = Convert.ToString(data[7]);
                         a.gender = data[8];
+                        a.straße = data[9];
+                        a.HausNr = data[10];
+                        a.tel = data[11];
                         artikel.Add(a);
 
                     }
@@ -204,7 +226,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     Convert.ToString(textBoxort.Text),
                     Convert.ToString(textBoxlstatus.Text),
                     Convert.ToString(textBoxlnickname.Text),
-                    comboBoxgender.Text);
+                    comboBoxgender.Text, 
+                    textBoxstraße.Text,
+                    textBoxaHausNr.Text,
+                    textBoxtel.Text)
+
+                ;
 
                 textBoxpk.Text = "";
                 textBoxAlter.Text = "";
@@ -242,7 +269,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 for (; index < anzahl; index++)
                 {
                     savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
-                        tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender);
+                        tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender, 
+                        tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel);
                 }
             }
         }
