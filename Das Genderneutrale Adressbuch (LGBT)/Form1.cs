@@ -24,7 +24,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         public Form1()
         {
             string[] zeilen = File.ReadAllLines("...\\plz_de.csv");
-            foreach(string PLZ in zeilen.Skip(1))
+            foreach (string PLZ in zeilen.Skip(1))
             {
                 String[] data = PLZ.Split(';');
                 if (PLZ == "")
@@ -34,6 +34,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 Postleitzahl a = new Postleitzahl();
                 a.PLZ = int.Parse(data[2]);
                 a.OrtMitZusatz = data[0] + data[1];
+                a.Bundesland = data[4];
                 plz_liste.Add(a);
             }
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String ort;
             public String Status;
             public String nickname;
-            
+
         }
 
         private void buttonEingabe_Click(object sender, EventArgs e)
@@ -113,7 +114,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
         }
         //Artikle speicher logik
-        public static void savecsv(string filepath, string id, int alter, int plz, 
+        public static void savecsv(string filepath, string id, int alter, int plz,
             string vorname, string gender, string nachname, string ort, string Status, string nickname)
         {
             //Erstelle  streamWriter
@@ -154,8 +155,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Uups, da ist was schief gegangen:\n versuchen sie zb "); // Fehler anzeigen
-                     // Abbrechen der Funktion
+                    MessageBox.Show("Nix gefunde oder Uups, da ist was schief gegangen:\n versuchen sie zb Excel zu sclisen"); // Fehler anzeigen
+                                                                                                             
                 }
 
                 return artikel.ToArray();
@@ -164,29 +165,34 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Aufruf vom Programm save csv
-            savecsv(@"...\db.csv",
-                textBoxpk.Text,
-                 Convert.ToInt32(textBoxAlter.Text),
-                 Convert.ToInt32(textBoxplz.Text),
-                Convert.ToString(textBoxvorname.Text),
-                Convert.ToString(textBoxdnachname.Text),
-                Convert.ToString(textBoxort.Text),
-                Convert.ToString(textBoxlstatus.Text),
-                Convert.ToString(textBoxlnickname.Text),
-                comboBoxgender.Text);
+            try {
+                //Aufruf vom Programm save csv
+                savecsv(@"...\db.csv",
+                    textBoxpk.Text,
+                     Convert.ToInt32(textBoxAlter.Text),
+                     Convert.ToInt32(textBoxplz.Text),
+                    Convert.ToString(textBoxvorname.Text),
+                    Convert.ToString(textBoxdnachname.Text),
+                    Convert.ToString(textBoxort.Text),
+                    Convert.ToString(textBoxlstatus.Text),
+                    Convert.ToString(textBoxlnickname.Text),
+                    comboBoxgender.Text);
 
-            textBoxpk.Text = "";
-            textBoxAlter.Text = "";
-            textBoxplz.Text = "";
-            textBoxvorname.Text = "";
-            textBoxdnachname.Text = "";
-            textBoxort.Text = "";
-            textBoxlstatus.Text = "";
-            textBoxlnickname.Text = "";
-            comboBoxgender.Text = "";
-        }
-
+                textBoxpk.Text = "";
+                textBoxAlter.Text = "";
+                textBoxplz.Text = "";
+                textBoxvorname.Text = "";
+                textBoxdnachname.Text = "";
+                textBoxort.Text = "";
+                textBoxlstatus.Text = "";
+                textBoxlnickname.Text = "";
+                comboBoxgender.Text = "";
+            } catch 
+            {
+                MessageBox.Show("Feheler Bittel alle Felder Aufühlen");
+            }
+            }
+    
         private void button2_Click(object sender, EventArgs e)
         {
             //Erstelle  streamWriter
@@ -257,6 +263,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     if (tmp.PLZ == int.Parse(textBoxplz.Text))
                     {
                         textBoxort.Text = tmp.OrtMitZusatz;
+                        textBoxbund.Text = tmp.Bundesland;
                     }
                 }
             }
