@@ -13,6 +13,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 {
     public partial class Form1 : Form
     {
+        List<Artikel> liste_Suchergebnisse;
         public struct Postleitzahl
 
         {
@@ -23,7 +24,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         List<Postleitzahl> plz_liste = new List<Postleitzahl>();
         public Form1()
         {
-            string[] zeilen = File.ReadAllLines("...\\plz_de.csv");
+            string[] zeilen = File.ReadAllLines("...\\plz_de.csv", Encoding.GetEncoding("iso-8859-1"));
             foreach(string PLZ in zeilen.Skip(1))
             {
                 String[] data = PLZ.Split(';');
@@ -53,8 +54,32 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String Status;
             public String nickname;
             
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname)
+            {
+                this.id = id;
+                this.Alter = Alter;
+                this.plz = plz;
+                this.vorname = vorname;
+                this.gender = gender;
+                this.nachname = nachname;
+                this.ort = ort;
+                this.Status = Status;
+                this.nickname = nickname;
+            }
         }
-
+        public void zeigeArtikel(Artikel artikel)
+        {
+            labelpk.Text = artikel.id;
+            textBoxaalter.Text = Convert.ToString(artikel.Alter);
+            textBoxaplz.Text = Convert.ToString(artikel.plz);
+            textBoxavorname.Text = artikel.vorname;
+            textBoxd2a.Text = artikel.nachname;
+            textBoxaort.Text = artikel.ort;
+            textBoxastaus.Text = artikel.Status;
+            textBoxNickname.Text = artikel.nickname;
+            labelGender.Text = artikel.gender;
+            groupBox1.Visible = true;
+        }
         private void buttonEingabe_Click(object sender, EventArgs e)
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
@@ -62,25 +87,24 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             int anzahl = tabelle.Length;
             string temp = textBoxpk.Text;
             int tempint = 0;
-
+            liste_Suchergebnisse = new List<Artikel>();
             for (; index < anzahl;)
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-                if (temp == tabelle[index].id)
+                
+                if (temp == tabelle[index].id) //Ergebnis passt.
                 {
-                    tempint = index;
-                    labelpk.Text = tabelle[tempint].id;
-                    textBoxaalter.Text = Convert.ToString(tabelle[tempint].Alter);
-                    textBoxaplz.Text = Convert.ToString(tabelle[tempint].plz);
-                    textBoxavorname.Text = Convert.ToString(tabelle[tempint].vorname);
-                    textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
-                    textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
-                    textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
-                    textBoxNickname.Text = tabelle[tempint].nickname;
-                    labelGender.Text = tabelle[tempint].gender;
-                    groupBox1.Visible = true;
-
+                    liste_Suchergebnisse.Add(new Artikel(
+                        tabelle[index].id,
+                        tabelle[index].Alter,
+                        tabelle[index].plz,
+                        tabelle[index].vorname,
+                        tabelle[index].gender,
+                        tabelle[index].nachname,
+                        tabelle[index].ort,
+                        tabelle[index].Status,
+                        tabelle[index].nickname));
                 }
                 //Eingabe über Abmasse
                 else if (textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
@@ -106,6 +130,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
                 index++;
             }
+            if (liste_Suchergebnisse.Count > 0)
+            {
+                zeigeArtikel(liste_Suchergebnisse[0]);
+            }
             // Error meldungen
             if (textBoxpk.Text == "" & textBoxAlter.Text == "")
             {
@@ -127,15 +155,15 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         // Speicher in Array
         public static class Tabelle
         {
-            public static Artikel[] getTabel(String Datei)
+            public static Artikel[] getTabel(string Datei)
             {
                 List<Artikel> artikel = new List<Artikel>();
-                String[] zeilen = File.ReadAllLines(Datei);
+                string[] zeilen = File.ReadAllLines(Datei);
                 
-                foreach (String zeile in zeilen.Skip(1))
+                foreach (string zeile in zeilen.Skip(1))
                 {
 
-                    String[] data = zeile.Split(';');
+                    string[] data = zeile.Split(';');
                     Artikel a = new Artikel();
                     a.id = data[0];
                     a.Alter = Convert.ToInt32(data[1]);
