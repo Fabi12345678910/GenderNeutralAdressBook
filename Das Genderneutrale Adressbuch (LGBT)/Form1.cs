@@ -14,6 +14,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     public partial class Form1 : Form
     {
         List<Artikel> liste_Suchergebnisse;
+        int aktuellesSuchErgebnis;
         public struct Postleitzahl
 
         {
@@ -68,8 +69,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.nickname = nickname;
             }
         }
-        public void zeigeArtikel(Artikel artikel)
+        public void zeigeAktuellenArtikel()
         {
+            Artikel artikel = liste_Suchergebnisse[aktuellesSuchErgebnis];
             labelpk.Text = artikel.id;
             textBoxaalter.Text = Convert.ToString(artikel.Alter);
             textBoxaplz.Text = Convert.ToString(artikel.plz);
@@ -133,8 +135,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
             if (liste_Suchergebnisse.Count > 0)
             {
-                zeigeArtikel(liste_Suchergebnisse[0]);
+                aktuellesSuchErgebnis = 0;
+                zeigeAktuellenArtikel();
             }
+
+            updateNavigationButtons();
             // Error meldungen
             if (textBoxpk.Text == "" & textBoxAlter.Text == "")
             {
@@ -299,6 +304,31 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button10_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonvorwaerts_Click(object sender, EventArgs e)
+        {
+            if (aktuellesSuchErgebnis < liste_Suchergebnisse.Count-1)
+            {
+                aktuellesSuchErgebnis++;
+                zeigeAktuellenArtikel();
+                updateNavigationButtons();
+            }
+        }
+
+        private void buttonzurueck_Click(object sender, EventArgs e)
+        {
+            if (aktuellesSuchErgebnis > 0)
+            {
+                aktuellesSuchErgebnis--;
+                zeigeAktuellenArtikel();
+                updateNavigationButtons();
+            }
+        }
+        private void updateNavigationButtons()
+        {
+            buttonvorwaerts.Enabled = !(aktuellesSuchErgebnis >= liste_Suchergebnisse.Count - 1);
+            buttonzurueck.Enabled = (aktuellesSuchErgebnis != 0);
         }
     }
 }

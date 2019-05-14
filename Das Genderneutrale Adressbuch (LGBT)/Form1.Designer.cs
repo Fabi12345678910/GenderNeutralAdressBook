@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
+            this.buttonvorwaerts = new System.Windows.Forms.Button();
+            this.buttonzurueck = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.labelGender = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
@@ -80,10 +83,12 @@
             this.textBoxbund = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBoxNavigation);
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.button9);
@@ -117,6 +122,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // groupBoxNavigation
+            // 
+            this.groupBoxNavigation.Controls.Add(this.buttonvorwaerts);
+            this.groupBoxNavigation.Controls.Add(this.buttonzurueck);
+            this.groupBoxNavigation.Location = new System.Drawing.Point(1015, 19);
+            this.groupBoxNavigation.Name = "groupBoxNavigation";
+            this.groupBoxNavigation.Size = new System.Drawing.Size(91, 100);
+            this.groupBoxNavigation.TabIndex = 90;
+            this.groupBoxNavigation.TabStop = false;
+            this.groupBoxNavigation.Text = "Navigation";
+            // 
+            // buttonvorwaerts
+            // 
+            this.buttonvorwaerts.Location = new System.Drawing.Point(6, 57);
+            this.buttonvorwaerts.Name = "buttonvorwaerts";
+            this.buttonvorwaerts.Size = new System.Drawing.Size(69, 35);
+            this.buttonvorwaerts.TabIndex = 89;
+            this.buttonvorwaerts.Text = "Vorwärts";
+            this.buttonvorwaerts.UseVisualStyleBackColor = true;
+            this.buttonvorwaerts.Click += new System.EventHandler(this.buttonvorwaerts_Click);
+            // 
+            // buttonzurueck
+            // 
+            this.buttonzurueck.Location = new System.Drawing.Point(6, 18);
+            this.buttonzurueck.Name = "buttonzurueck";
+            this.buttonzurueck.Size = new System.Drawing.Size(69, 35);
+            this.buttonzurueck.TabIndex = 88;
+            this.buttonzurueck.Text = "Rückwärts";
+            this.buttonzurueck.UseVisualStyleBackColor = true;
+            this.buttonzurueck.Click += new System.EventHandler(this.buttonzurueck_Click);
             // 
             // button10
             // 
@@ -603,6 +639,7 @@
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -661,6 +698,9 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.TextBox textBoxbund;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button buttonvorwaerts;
+        private System.Windows.Forms.Button buttonzurueck;
+        private System.Windows.Forms.GroupBox groupBoxNavigation;
     }
 }
 
