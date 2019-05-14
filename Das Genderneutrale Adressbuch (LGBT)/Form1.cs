@@ -130,25 +130,34 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public static Artikel[] getTabel(String Datei)
             {
                 List<Artikel> artikel = new List<Artikel>();
-                String[] zeilen = File.ReadAllLines(Datei);
-                
-                foreach (String zeile in zeilen.Skip(1))
-                {
+                try {
+                    String[] zeilen = File.ReadAllLines(Datei);
 
-                    String[] data = zeile.Split(';');
-                    Artikel a = new Artikel();
-                    a.id = data[0];
-                    a.Alter = Convert.ToInt32(data[1]);
-                    a.plz = Convert.ToInt32(data[2]);
-                    a.vorname = Convert.ToString(data[3]);
-                    a.nachname = Convert.ToString(data[4]);
-                    a.ort = Convert.ToString(data[5]);
-                    a.Status = Convert.ToString(data[6]);
-                    a.nickname = Convert.ToString(data[7]);
-                    a.gender = data[8];
-                    artikel.Add(a);
 
+                    foreach (String zeile in zeilen.Skip(1))
+                    {
+
+                        String[] data = zeile.Split(';');
+                        Artikel a = new Artikel();
+                        a.id = data[0];
+                        a.Alter = Convert.ToInt32(data[1]);
+                        a.plz = Convert.ToInt32(data[2]);
+                        a.vorname = Convert.ToString(data[3]);
+                        a.nachname = Convert.ToString(data[4]);
+                        a.ort = Convert.ToString(data[5]);
+                        a.Status = Convert.ToString(data[6]);
+                        a.nickname = Convert.ToString(data[7]);
+                        a.gender = data[8];
+                        artikel.Add(a);
+
+                    }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Uups, da ist was schief gegangen:\n versuchen sie zb "); // Fehler anzeigen
+                     // Abbrechen der Funktion
+                }
+
                 return artikel.ToArray();
             }
         }
