@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
+            this.label911 = new System.Windows.Forms.Label();
             this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.buttonvorwaerts = new System.Windows.Forms.Button();
             this.buttonzurueck = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -95,13 +96,19 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBoxtel = new System.Windows.Forms.TextBox();
-            this.label911 = new System.Windows.Forms.Label();
+            this.textBoxemail = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxaemail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.textBoxaemail);
             this.groupBox1.Controls.Add(this.groupBoxNavigation);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.button10);
@@ -137,7 +144,7 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(32, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1332, 193);
+            this.groupBox1.Size = new System.Drawing.Size(1504, 193);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
@@ -149,12 +156,21 @@
             this.groupBoxNavigation.Controls.Add(this.textBoxAnzahlErgebnisse);
             this.groupBoxNavigation.Controls.Add(this.buttonvorwaerts);
             this.groupBoxNavigation.Controls.Add(this.buttonzurueck);
-            this.groupBoxNavigation.Location = new System.Drawing.Point(1001, 19);
+            this.groupBoxNavigation.Location = new System.Drawing.Point(1393, 16);
             this.groupBoxNavigation.Name = "groupBoxNavigation";
             this.groupBoxNavigation.Size = new System.Drawing.Size(105, 168);
             this.groupBoxNavigation.TabIndex = 90;
             this.groupBoxNavigation.TabStop = false;
             this.groupBoxNavigation.Text = "Navigation";
+            // 
+            // label911
+            // 
+            this.label911.AutoSize = true;
+            this.label911.Location = new System.Drawing.Point(6, 95);
+            this.label911.Name = "label911";
+            this.label911.Size = new System.Drawing.Size(97, 13);
+            this.label911.TabIndex = 92;
+            this.label911.Text = "Anzahl Ergebnisse:";
             // 
             // textBoxAnzahlErgebnisse
             // 
@@ -163,15 +179,6 @@
             this.textBoxAnzahlErgebnisse.ReadOnly = true;
             this.textBoxAnzahlErgebnisse.Size = new System.Drawing.Size(69, 20);
             this.textBoxAnzahlErgebnisse.TabIndex = 91;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(540, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 87;
-            this.label12.Text = "Straße";
             // 
             // buttonvorwaerts
             // 
@@ -222,7 +229,7 @@
             // labelGender
             // 
             this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(1015, 59);
+            this.labelGender.Location = new System.Drawing.Point(1117, 59);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(0, 13);
             this.labelGender.TabIndex = 76;
@@ -380,7 +387,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1015, 28);
+            this.label10.Location = new System.Drawing.Point(1117, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 0;
@@ -473,6 +480,15 @@
             this.label24.Size = new System.Drawing.Size(64, 13);
             this.label24.TabIndex = 40;
             this.label24.Text = "Id vom User";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(540, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "Straße";
             // 
             // label11
             // 
@@ -731,21 +747,46 @@
             this.textBoxtel.Size = new System.Drawing.Size(104, 20);
             this.textBoxtel.TabIndex = 92;
             // 
-            // label911
+            // textBoxemail
             // 
-            this.label911.AutoSize = true;
-            this.label911.Location = new System.Drawing.Point(6, 95);
-            this.label911.Name = "label911";
-            this.label911.Size = new System.Drawing.Size(97, 13);
-            this.label911.TabIndex = 92;
-            this.label911.Text = "Anzahl Ergebnisse:";
+            this.textBoxemail.Location = new System.Drawing.Point(1391, 74);
+            this.textBoxemail.Name = "textBoxemail";
+            this.textBoxemail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxemail.TabIndex = 99;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1388, 39);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(32, 13);
+            this.label26.TabIndex = 100;
+            this.label26.Text = "Email";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(962, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 102;
+            this.label27.Text = "Email";
+            // 
+            // textBoxaemail
+            // 
+            this.textBoxaemail.Location = new System.Drawing.Point(965, 62);
+            this.textBoxaemail.Name = "textBoxaemail";
+            this.textBoxaemail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaemail.TabIndex = 101;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1376, 540);
+            this.ClientSize = new System.Drawing.Size(1548, 540);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxtel);
             this.Controls.Add(this.textBox1);
@@ -858,6 +899,10 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBoxtel;
         private System.Windows.Forms.Label label911;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBoxaemail;
+        private System.Windows.Forms.TextBox textBoxemail;
+        private System.Windows.Forms.Label label26;
     }
 }
 

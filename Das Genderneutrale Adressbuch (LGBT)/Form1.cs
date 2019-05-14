@@ -58,9 +58,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String straße;
             public String tel;
             public String HausNr;
-
+            public String Email;
             
-            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr )
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr,string Email)
             {
                 this.id = id;
                 this.Alter = Alter;
@@ -74,6 +74,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.straße = straße;
                 this.tel = tel;
                 this.HausNr = HausNr;
+                this.Email = Email;
             }
         }
         public void zeigeAktuellenArtikel()
@@ -91,6 +92,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxaStraße.Text = artikel.straße;
             textBoxaHausNr.Text = artikel.HausNr;
             textBoxatel.Text = artikel.tel;
+            textBoxaemail.Text = artikel.Email;
             groupBox1.Visible = true;
         }
         private void buttonEingabe_Click(object sender, EventArgs e)
@@ -112,6 +114,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     || textBoxlnickname.Text == tabelle[index].nickname
                     || textBoxstraße.Text == tabelle[index].straße
                     || textBoxaHausNr.Text == tabelle[index].HausNr
+                    || textBoxaemail.Text == tabelle[index].Email
                     || textBoxtel.Text == tabelle[index].tel)
                 {
                     liste_Suchergebnisse.Add(new Artikel(
@@ -126,7 +129,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                        tabelle[index].nickname,
                        tabelle[index].straße,
                        tabelle[index].HausNr,
-                       tabelle[index].tel));
+                       tabelle[index].tel,
+                       tabelle[index].Email));
                 }
             }
 
@@ -147,12 +151,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         }
         //Artikle speicher logik
         public static void savecsv(string filepath, string id, int alter, int plz,
-            string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel )
+            string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel ,string Email)
         {
             //Erstelle  streamWriter
             using (StreamWriter streamWriter = new StreamWriter(filepath, true))
             {
-                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" + Hausnummar + ";" + tel);
+                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" + Hausnummar + ";" + tel + ";" + Email);
 
             }
 
@@ -184,6 +188,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                         a.straße = data[9];
                         a.HausNr = data[10];
                         a.tel = data[11];
+                        a.Email = data[12];
                         artikel.Add(a);
 
                     }
@@ -214,7 +219,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     comboBoxgender.Text, 
                     textBoxstraße.Text,
                     textBoxaHausNr.Text,
-                    textBoxtel.Text)
+                    textBoxtel.Text,
+                    textBoxaemail.Text)
 
                 ;
 
@@ -227,6 +233,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxlstatus.Text = "";
                 textBoxlnickname.Text = "";
                 comboBoxgender.Text = "";
+                textBoxaemail.Text = "";
+                
             } catch 
             {
                 MessageBox.Show("Feheler Bittel alle Felder Aufühlen");
@@ -255,7 +263,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 {
                     savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
                         tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender, 
-                        tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel);
+                        tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel , tabelle[index].Email);
                 }
             }
         }
