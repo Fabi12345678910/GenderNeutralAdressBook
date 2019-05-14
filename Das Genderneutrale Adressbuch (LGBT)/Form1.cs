@@ -102,17 +102,17 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-                if (textBoxpk.Text == tabelle[index].id 
-                    || textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
-                    || textBoxplz.Text == Convert.ToString(tabelle[index].plz)
-                    || textBoxvorname.Text == tabelle[index].vorname
-                    || textBoxdnachname.Text == tabelle[index].nachname
-                    || textBoxort.Text == tabelle[index].ort
-                    || textBoxlstatus.Text == tabelle[index].Status
-                    || textBoxlnickname.Text == tabelle[index].nickname
-                    || textBoxstraße.Text == tabelle[index].straße
-                    || textBoxaHausNr.Text == tabelle[index].HausNr
-                    || textBoxtel.Text == tabelle[index].tel)
+                if (textBoxpk.Text == tabelle[index].id
+                    || (textBoxAlter.Text != "" ? textBoxAlter.Text == Convert.ToString(tabelle[index].Alter) : false)
+                    || (textBoxplz.Text !="" ? textBoxplz.Text == Convert.ToString(tabelle[index].plz) : false)
+                    || (textBoxvorname.Text!="" ? textBoxvorname.Text == tabelle[index].vorname : false)
+                    || (textBoxdnachname.Text != "" ? textBoxdnachname.Text == tabelle[index].nachname : false)
+                    || (textBoxort.Text != "" ? textBoxort.Text == tabelle[index].ort : false)
+                    || (textBoxlstatus.Text != "" ? textBoxlstatus.Text == tabelle[index].Status : false)
+                    || (textBoxlnickname.Text != "" ? textBoxlnickname.Text == tabelle[index].nickname : false)
+                    || (textBoxstraße.Text != "" ? textBoxstraße.Text == tabelle[index].straße : false)
+                    || (textBoxaHausNr.Text != "" ? textBoxaHausNr.Text == tabelle[index].HausNr : false)
+                    || (textBoxtel.Text != "" ? textBoxtel.Text == tabelle[index].tel : false))
                 {
                     liste_Suchergebnisse.Add(new Artikel(
                        tabelle[index].id,
@@ -204,8 +204,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 //Aufruf vom Programm save csv
                 savecsv(@"...\db.csv",
                     textBoxpk.Text,
-                     Convert.ToInt32(textBoxAlter.Text),
-                     Convert.ToInt32(textBoxplz.Text),
+                    Convert.ToInt32(textBoxAlter.Text),
+                    Convert.ToInt32(textBoxplz.Text),
                     Convert.ToString(textBoxvorname.Text),
                     Convert.ToString(textBoxdnachname.Text),
                     Convert.ToString(textBoxort.Text),

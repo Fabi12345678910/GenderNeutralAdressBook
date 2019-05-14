@@ -30,8 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
+            this.label911 = new System.Windows.Forms.Label();
             this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.buttonvorwaerts = new System.Windows.Forms.Button();
             this.buttonzurueck = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -95,7 +96,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBoxtel = new System.Windows.Forms.TextBox();
-            this.label911 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -156,6 +156,15 @@
             this.groupBoxNavigation.TabStop = false;
             this.groupBoxNavigation.Text = "Navigation";
             // 
+            // label911
+            // 
+            this.label911.AutoSize = true;
+            this.label911.Location = new System.Drawing.Point(6, 95);
+            this.label911.Name = "label911";
+            this.label911.Size = new System.Drawing.Size(97, 13);
+            this.label911.TabIndex = 92;
+            this.label911.Text = "Anzahl Ergebnisse:";
+            // 
             // textBoxAnzahlErgebnisse
             // 
             this.textBoxAnzahlErgebnisse.Location = new System.Drawing.Point(21, 111);
@@ -163,15 +172,6 @@
             this.textBoxAnzahlErgebnisse.ReadOnly = true;
             this.textBoxAnzahlErgebnisse.Size = new System.Drawing.Size(69, 20);
             this.textBoxAnzahlErgebnisse.TabIndex = 91;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(540, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(38, 13);
-            this.label12.TabIndex = 87;
-            this.label12.Text = "Straße";
             // 
             // buttonvorwaerts
             // 
@@ -474,6 +474,15 @@
             this.label24.TabIndex = 40;
             this.label24.Text = "Id vom User";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(540, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "Straße";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -730,15 +739,6 @@
             this.textBoxtel.Name = "textBoxtel";
             this.textBoxtel.Size = new System.Drawing.Size(104, 20);
             this.textBoxtel.TabIndex = 92;
-            // 
-            // label911
-            // 
-            this.label911.AutoSize = true;
-            this.label911.Location = new System.Drawing.Point(6, 95);
-            this.label911.Name = "label911";
-            this.label911.Size = new System.Drawing.Size(97, 13);
-            this.label911.TabIndex = 92;
-            this.label911.Text = "Anzahl Ergebnisse:";
             // 
             // Form1
             // 
