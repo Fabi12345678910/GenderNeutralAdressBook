@@ -14,6 +14,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     public partial class Form1 : Form
     {
         List<Artikel> liste_Suchergebnisse;
+        int aktuellesSuchErgebnis;
         public struct Postleitzahl
 
         {
@@ -75,8 +76,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.HausNr = HausNr;
             }
         }
-        public void zeigeArtikel(Artikel artikel)
+        public void zeigeAktuellenArtikel()
         {
+            Artikel artikel = liste_Suchergebnisse[aktuellesSuchErgebnis];
             labelpk.Text = artikel.id;
             textBoxaalter.Text = Convert.ToString(artikel.Alter);
             textBoxaplz.Text = Convert.ToString(artikel.plz);
@@ -94,66 +96,49 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void buttonEingabe_Click(object sender, EventArgs e)
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
-            int index = 0;
             int anzahl = tabelle.Length;
-            string temp = textBoxpk.Text;
-            int tempint = 0;
             liste_Suchergebnisse = new List<Artikel>();
-            for (; index < anzahl;)
+            for (int index = 0;index < anzahl;index++)
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-
-                if (temp == tabelle[index].id) //Ergebnis passt.
+                if (textBoxpk.Text == tabelle[index].id 
+                    || textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
+                    || textBoxplz.Text == Convert.ToString(tabelle[index].plz)
+                    || textBoxvorname.Text == tabelle[index].vorname
+                    || textBoxdnachname.Text == tabelle[index].nachname
+                    || textBoxort.Text == tabelle[index].ort
+                    || textBoxlstatus.Text == tabelle[index].Status
+                    || textBoxlnickname.Text == tabelle[index].nickname
+                    || textBoxstraße.Text == tabelle[index].straße
+                    || textBoxaHausNr.Text == tabelle[index].HausNr
+                    || textBoxtel.Text == tabelle[index].tel)
                 {
                     liste_Suchergebnisse.Add(new Artikel(
-                        tabelle[index].id,
-                        tabelle[index].Alter,
-                        tabelle[index].plz,
-                        tabelle[index].vorname,
-                        tabelle[index].gender,
-                        tabelle[index].nachname,
-                        tabelle[index].ort,
-                        tabelle[index].Status,
-                        tabelle[index].nickname,
-                        tabelle[index].straße,
-                        tabelle[index].HausNr,
-                        tabelle[index].tel));
+                       tabelle[index].id,
+                       tabelle[index].Alter,
+                       tabelle[index].plz,
+                       tabelle[index].vorname,
+                       tabelle[index].gender,
+                       tabelle[index].nachname,
+                       tabelle[index].ort,
+                       tabelle[index].Status,
+                       tabelle[index].nickname,
+                       tabelle[index].straße,
+                       tabelle[index].HausNr,
+                       tabelle[index].tel));
                 }
-                //Eingabe über Abmasse
-                else if (textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
-                    & textBoxplz.Text == Convert.ToString(tabelle[index].plz)
-                    & textBoxvorname.Text == Convert.ToString(tabelle[index].vorname)
-                    & textBoxdnachname.Text == Convert.ToString(tabelle[index].nachname)
-                    & textBoxort.Text == Convert.ToString(tabelle[index].ort)
-                    & textBoxlstatus.Text == Convert.ToString(tabelle[index].Status)
-                    & textBoxlnickname.Text == Convert.ToString(tabelle[index].nickname)
-                    & textBoxstraße.Text == tabelle[index].straße
-                    & textBoxaHausNr.Text == tabelle[index].HausNr
-                    & textBoxtel.Text == tabelle[index].tel)
-                {
-                    tempint = index;
-                    labelpk.Text = tabelle[tempint].id;
-                    textBoxaalter.Text = Convert.ToString(tabelle[tempint].Alter);
-                    textBoxaplz.Text = Convert.ToString(tabelle[tempint].plz);
-                    textBoxavorname.Text = Convert.ToString(tabelle[tempint].vorname);
-                    textBoxd2a.Text = Convert.ToString(tabelle[tempint].nachname);
-                    textBoxaort.Text = Convert.ToString(tabelle[tempint].ort);
-                    textBoxastaus.Text = Convert.ToString(tabelle[tempint].Status);
-                    textBoxNickname.Text = tabelle[tempint].nickname;
-                    labelGender.Text = tabelle[tempint].gender;
-                    textBoxaStraße.Text = tabelle[index].straße;
-                   textBoxaHausNr.Text = tabelle[index].HausNr;
-                    textBoxatel.Text = tabelle[index].tel;
-                    groupBox1.Visible = true;
-                }
-
-                index++;
             }
+
+            textBoxAnzahlErgebnisse.Text = Convert.ToString(liste_Suchergebnisse.Count);
+
             if (liste_Suchergebnisse.Count > 0)
             {
-                zeigeArtikel(liste_Suchergebnisse[0]);
+                aktuellesSuchErgebnis = 0;
+                zeigeAktuellenArtikel();
             }
+
+            updateNavigationButtons();
             // Error meldungen
             if (textBoxpk.Text == "" & textBoxAlter.Text == "")
             {
@@ -327,6 +312,31 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button10_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void buttonvorwaerts_Click(object sender, EventArgs e)
+        {
+            if (aktuellesSuchErgebnis < liste_Suchergebnisse.Count-1)
+            {
+                aktuellesSuchErgebnis++;
+                zeigeAktuellenArtikel();
+                updateNavigationButtons();
+            }
+        }
+
+        private void buttonzurueck_Click(object sender, EventArgs e)
+        {
+            if (aktuellesSuchErgebnis > 0)
+            {
+                aktuellesSuchErgebnis--;
+                zeigeAktuellenArtikel();
+                updateNavigationButtons();
+            }
+        }
+        private void updateNavigationButtons()
+        {
+            buttonvorwaerts.Enabled = !(aktuellesSuchErgebnis >= liste_Suchergebnisse.Count - 1);
+            buttonzurueck.Enabled = (aktuellesSuchErgebnis != 0);
         }
     }
 }
