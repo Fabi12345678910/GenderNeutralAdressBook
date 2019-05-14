@@ -30,12 +30,20 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
+            this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.buttonvorwaerts = new System.Windows.Forms.Button();
             this.buttonzurueck = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.textBoxatel = new System.Windows.Forms.TextBox();
             this.labelGender = new System.Windows.Forms.Label();
+            this.textBoxaHausNr = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
+            this.textBoxaStraße = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
             this.textBoxNickname = new System.Windows.Forms.TextBox();
             this.textBoxastaus = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -82,8 +90,12 @@
             this.comboBoxgender = new System.Windows.Forms.ComboBox();
             this.textBoxbund = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
+            this.textBoxstraße = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxtel = new System.Windows.Forms.TextBox();
+            this.label911 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -91,10 +103,16 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBoxNavigation);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.button10);
+            this.groupBox1.Controls.Add(this.textBoxatel);
             this.groupBox1.Controls.Add(this.labelGender);
+            this.groupBox1.Controls.Add(this.textBoxaHausNr);
             this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.textBoxaStraße);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.textBoxNickname);
             this.groupBox1.Controls.Add(this.textBoxastaus);
             this.groupBox1.Controls.Add(this.button7);
@@ -119,7 +137,7 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(32, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1112, 193);
+            this.groupBox1.Size = new System.Drawing.Size(1332, 193);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
@@ -127,8 +145,8 @@
             // 
             // groupBoxNavigation
             // 
+            this.groupBoxNavigation.Controls.Add(this.label911);
             this.groupBoxNavigation.Controls.Add(this.textBoxAnzahlErgebnisse);
-            this.groupBoxNavigation.Controls.Add(this.label12);
             this.groupBoxNavigation.Controls.Add(this.buttonvorwaerts);
             this.groupBoxNavigation.Controls.Add(this.buttonzurueck);
             this.groupBoxNavigation.Location = new System.Drawing.Point(1001, 19);
@@ -137,6 +155,23 @@
             this.groupBoxNavigation.TabIndex = 90;
             this.groupBoxNavigation.TabStop = false;
             this.groupBoxNavigation.Text = "Navigation";
+            // 
+            // textBoxAnzahlErgebnisse
+            // 
+            this.textBoxAnzahlErgebnisse.Location = new System.Drawing.Point(21, 111);
+            this.textBoxAnzahlErgebnisse.Name = "textBoxAnzahlErgebnisse";
+            this.textBoxAnzahlErgebnisse.ReadOnly = true;
+            this.textBoxAnzahlErgebnisse.Size = new System.Drawing.Size(69, 20);
+            this.textBoxAnzahlErgebnisse.TabIndex = 91;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(540, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(38, 13);
+            this.label12.TabIndex = 87;
+            this.label12.Text = "Straße";
             // 
             // buttonvorwaerts
             // 
@@ -158,6 +193,15 @@
             this.buttonzurueck.UseVisualStyleBackColor = true;
             this.buttonzurueck.Click += new System.EventHandler(this.buttonzurueck_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(847, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 13);
+            this.label15.TabIndex = 95;
+            this.label15.Text = "tel";
+            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(25, 164);
@@ -168,13 +212,27 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // textBoxatel
+            // 
+            this.textBoxatel.Location = new System.Drawing.Point(853, 62);
+            this.textBoxatel.Name = "textBoxatel";
+            this.textBoxatel.Size = new System.Drawing.Size(104, 20);
+            this.textBoxatel.TabIndex = 98;
+            // 
             // labelGender
             // 
             this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(777, 59);
+            this.labelGender.Location = new System.Drawing.Point(1015, 59);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(0, 13);
             this.labelGender.TabIndex = 76;
+            // 
+            // textBoxaHausNr
+            // 
+            this.textBoxaHausNr.Location = new System.Drawing.Point(814, 62);
+            this.textBoxaHausNr.Name = "textBoxaHausNr";
+            this.textBoxaHausNr.Size = new System.Drawing.Size(24, 20);
+            this.textBoxaHausNr.TabIndex = 97;
             // 
             // button9
             // 
@@ -186,6 +244,22 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // textBoxaStraße
+            // 
+            this.textBoxaStraße.Location = new System.Drawing.Point(701, 62);
+            this.textBoxaStraße.Name = "textBoxaStraße";
+            this.textBoxaStraße.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaStraße.TabIndex = 94;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(797, 28);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.TabIndex = 96;
+            this.label16.Text = "Hausnr";
+            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(533, 88);
@@ -195,6 +269,15 @@
             this.button8.Text = "x";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(708, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(38, 13);
+            this.label25.TabIndex = 93;
+            this.label25.Text = "Straße";
             // 
             // textBoxNickname
             // 
@@ -297,7 +380,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(777, 28);
+            this.label10.Location = new System.Drawing.Point(1015, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 0;
@@ -394,7 +477,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1030, 39);
+            this.label11.Location = new System.Drawing.Point(1202, 39);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 84;
@@ -431,7 +514,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(918, 39);
+            this.label8.Location = new System.Drawing.Point(1090, 39);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 79;
@@ -439,7 +522,7 @@
             // 
             // textBoxlnickname
             // 
-            this.textBoxlnickname.Location = new System.Drawing.Point(921, 73);
+            this.textBoxlnickname.Location = new System.Drawing.Point(1093, 73);
             this.textBoxlnickname.Name = "textBoxlnickname";
             this.textBoxlnickname.Size = new System.Drawing.Size(86, 20);
             this.textBoxlnickname.TabIndex = 78;
@@ -466,7 +549,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(822, 39);
+            this.label7.Location = new System.Drawing.Point(994, 39);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 75;
@@ -475,7 +558,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(710, 40);
+            this.label4.Location = new System.Drawing.Point(882, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 74;
@@ -484,7 +567,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(614, 39);
+            this.label5.Location = new System.Drawing.Point(786, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 73;
@@ -519,29 +602,29 @@
             // 
             // textBoxlstatus
             // 
-            this.textBoxlstatus.Location = new System.Drawing.Point(825, 73);
+            this.textBoxlstatus.Location = new System.Drawing.Point(997, 73);
             this.textBoxlstatus.Name = "textBoxlstatus";
             this.textBoxlstatus.Size = new System.Drawing.Size(79, 20);
             this.textBoxlstatus.TabIndex = 69;
             // 
             // textBoxort
             // 
-            this.textBoxort.Enabled = false;
             this.textBoxort.Location = new System.Drawing.Point(293, 74);
             this.textBoxort.Name = "textBoxort";
+            this.textBoxort.ReadOnly = true;
             this.textBoxort.Size = new System.Drawing.Size(87, 20);
             this.textBoxort.TabIndex = 66;
             // 
             // textBoxdnachname
             // 
-            this.textBoxdnachname.Location = new System.Drawing.Point(617, 73);
+            this.textBoxdnachname.Location = new System.Drawing.Point(789, 73);
             this.textBoxdnachname.Name = "textBoxdnachname";
             this.textBoxdnachname.Size = new System.Drawing.Size(82, 20);
             this.textBoxdnachname.TabIndex = 67;
             // 
             // textBoxvorname
             // 
-            this.textBoxvorname.Location = new System.Drawing.Point(713, 74);
+            this.textBoxvorname.Location = new System.Drawing.Point(885, 74);
             this.textBoxvorname.Name = "textBoxvorname";
             this.textBoxvorname.Size = new System.Drawing.Size(96, 20);
             this.textBoxvorname.TabIndex = 68;
@@ -587,7 +670,7 @@
             "Hund",
             "Mänlich mit Weiblichen geschlechtsmerkmale",
             "Alex"});
-            this.comboBoxgender.Location = new System.Drawing.Point(1033, 73);
+            this.comboBoxgender.Location = new System.Drawing.Point(1205, 73);
             this.comboBoxgender.Name = "comboBoxgender";
             this.comboBoxgender.Size = new System.Drawing.Size(159, 21);
             this.comboBoxgender.TabIndex = 82;
@@ -596,6 +679,7 @@
             // 
             this.textBoxbund.Location = new System.Drawing.Point(396, 73);
             this.textBoxbund.Name = "textBoxbund";
+            this.textBoxbund.ReadOnly = true;
             this.textBoxbund.Size = new System.Drawing.Size(118, 20);
             this.textBoxbund.TabIndex = 86;
             // 
@@ -608,29 +692,66 @@
             this.label9.TabIndex = 87;
             this.label9.Text = "Bundesland";
             // 
-            // label12
+            // textBoxstraße
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 95);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 13);
-            this.label12.TabIndex = 90;
-            this.label12.Text = "Anzahl Ergebnisse:";
+            this.textBoxstraße.Location = new System.Drawing.Point(533, 74);
+            this.textBoxstraße.Name = "textBoxstraße";
+            this.textBoxstraße.Size = new System.Drawing.Size(100, 20);
+            this.textBoxstraße.TabIndex = 88;
             // 
-            // textBoxAnzahlErgebnisse
+            // label13
             // 
-            this.textBoxAnzahlErgebnisse.Location = new System.Drawing.Point(21, 111);
-            this.textBoxAnzahlErgebnisse.Name = "textBoxAnzahlErgebnisse";
-            this.textBoxAnzahlErgebnisse.ReadOnly = true;
-            this.textBoxAnzahlErgebnisse.Size = new System.Drawing.Size(69, 20);
-            this.textBoxAnzahlErgebnisse.TabIndex = 91;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(679, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(18, 13);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "tel";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(629, 40);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 90;
+            this.label14.Text = "Hausnr";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(646, 74);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(24, 20);
+            this.textBox1.TabIndex = 91;
+            // 
+            // textBoxtel
+            // 
+            this.textBoxtel.Location = new System.Drawing.Point(679, 73);
+            this.textBoxtel.Name = "textBoxtel";
+            this.textBoxtel.Size = new System.Drawing.Size(104, 20);
+            this.textBoxtel.TabIndex = 92;
+            // 
+            // label911
+            // 
+            this.label911.AutoSize = true;
+            this.label911.Location = new System.Drawing.Point(6, 95);
+            this.label911.Name = "label911";
+            this.label911.Size = new System.Drawing.Size(97, 13);
+            this.label911.TabIndex = 92;
+            this.label911.Text = "Anzahl Ergebnisse:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1221, 540);
+            this.ClientSize = new System.Drawing.Size(1376, 540);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBoxtel);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxstraße);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxbund);
             this.Controls.Add(this.comboBoxgender);
@@ -725,6 +846,18 @@
         private System.Windows.Forms.GroupBox groupBoxNavigation;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxAnzahlErgebnisse;
+        private System.Windows.Forms.TextBox textBoxstraße;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxatel;
+        private System.Windows.Forms.TextBox textBoxaHausNr;
+        private System.Windows.Forms.TextBox textBoxaStraße;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxtel;
+        private System.Windows.Forms.Label label911;
     }
 }
 
