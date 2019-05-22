@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxaemail = new System.Windows.Forms.TextBox();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
             this.label911 = new System.Windows.Forms.Label();
             this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
@@ -98,8 +100,6 @@
             this.textBoxtel = new System.Windows.Forms.TextBox();
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBoxaemail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +149,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(962, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 102;
+            this.label27.Text = "Email";
+            // 
+            // textBoxaemail
+            // 
+            this.textBoxaemail.Location = new System.Drawing.Point(965, 62);
+            this.textBoxaemail.Name = "textBoxaemail";
+            this.textBoxaemail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaemail.TabIndex = 101;
             // 
             // groupBoxNavigation
             // 
@@ -763,28 +779,12 @@
             this.label26.TabIndex = 100;
             this.label26.Text = "Email";
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(962, 24);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(32, 13);
-            this.label27.TabIndex = 102;
-            this.label27.Text = "Email";
-            // 
-            // textBoxaemail
-            // 
-            this.textBoxaemail.Location = new System.Drawing.Point(965, 62);
-            this.textBoxaemail.Name = "textBoxaemail";
-            this.textBoxaemail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxaemail.TabIndex = 101;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1548, 540);
+            this.BackColor = System.Drawing.Color.HotPink;
+            this.ClientSize = new System.Drawing.Size(1540, 540);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label13);
