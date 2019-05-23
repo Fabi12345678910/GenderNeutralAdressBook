@@ -104,6 +104,7 @@
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -111,6 +112,7 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.button15);
             this.groupBox1.Controls.Add(this.button14);
             this.groupBox1.Controls.Add(this.button13);
             this.groupBox1.Controls.Add(this.button12);
@@ -831,6 +833,16 @@
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(1131, 101);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(16, 23);
+            this.button15.TabIndex = 107;
+            this.button15.Text = "x";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -959,6 +971,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
     }
 }
 
