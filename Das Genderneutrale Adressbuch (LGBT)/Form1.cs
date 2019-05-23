@@ -238,6 +238,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             } catch 
             {
                 MessageBox.Show("Feheler Bittel alle Felder Aufühlen");
+                
             }
             }
     
@@ -369,7 +370,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void Button15_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Do you yust asumebd my gender");
+            groupBox1.Visible = false;
+            MessageBox.Show("Did you just assume my gender????????");
+            this.BackgroundImage = new Bitmap(@"...\gender.jfif");
         }
     }
 }
