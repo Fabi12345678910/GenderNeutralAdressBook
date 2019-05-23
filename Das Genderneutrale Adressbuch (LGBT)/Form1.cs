@@ -346,5 +346,25 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             buttonvorwaerts.Enabled = !(aktuellesSuchErgebnis >= liste_Suchergebnisse.Count - 1);
             buttonzurueck.Enabled = (aktuellesSuchErgebnis != 0);
         }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            textBoxaStraße.ReadOnly = false;
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            textBoxaHausNr.ReadOnly = false;
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            textBoxatel.ReadOnly = false;       
+        }
+
+        private void Button14_Click(object sender, EventArgs e)
+        {
+            textBoxaemail.ReadOnly = false;
+        }
     }
 }
