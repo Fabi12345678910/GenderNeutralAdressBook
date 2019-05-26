@@ -165,18 +165,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
 
         }
-        public static void savecsv2(string filepath, string id, int alter, int plz,
-         string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel, string Email)
-        {
-            //Erstelle  streamWriter
-            using (StreamWriter streamWriter = new StreamWriter(filepath, false))
-            {
-                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";" + straße + ";"
-                    + Hausnummar + ";" + tel + ";" + Email);
-
-            }
-
-        }
+     
         // Speicher in Array
         public static class Tabelle
         {
@@ -276,9 +265,16 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     streamWriter.WriteLine("");
                 }
                 int anzahl = tabelle.Length;
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", true))
+                {
+
+                    streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                        + "Hausnummar" + ";" + "tel" + ";" + "Email");
+
+                }
                 for (; index < anzahl; index++)
                 {
-                    savecsv2(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                    savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
                         tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender, 
                         tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel , tabelle[index].Email);
                 }
@@ -307,9 +303,16 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     tabelle[index].Email = textBoxaemail.Text;
                 }
             }
+            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", true))
+            {
+
+                streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                    + "Hausnummar" + ";" + "tel" + ";" + "Email");
+
+            }
             for (index = 0; index < anzahl; index++)
             {
-                savecsv2(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
                     tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender,
                     tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
             }
