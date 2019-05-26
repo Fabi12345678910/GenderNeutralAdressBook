@@ -146,7 +146,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             // Error meldungen
             if (textBoxpk.Text == "" & textBoxAlter.Text == "")
             {
-                labelerror.Text = "Artikel Nicht gefunden wollen sie eine Sonder Bessellung";
+                labelerror.Text = "Upsi da ist was schief gelaufen";
             }
         }
         //Artikle speicher logik
@@ -371,8 +371,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void Button15_Click(object sender, EventArgs e)
         {
             groupBox1.Visible = false;
-            MessageBox.Show("Did you just assume my gender????????");
             this.BackgroundImage = new Bitmap(@"...\gender.jfif");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Did_you_just_assume_my_gender.wav");
+            player.Play();
+            MessageBox.Show("Did you just assume my gender????????");
         }
     }
 }
