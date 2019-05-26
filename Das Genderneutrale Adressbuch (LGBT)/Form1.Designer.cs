@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -42,19 +44,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.textBoxatel = new System.Windows.Forms.TextBox();
-            this.labelGender = new System.Windows.Forms.Label();
             this.textBoxaHausNr = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.textBoxaStraße = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBoxNickname = new System.Windows.Forms.TextBox();
+            this.textBoxaNickname = new System.Windows.Forms.TextBox();
             this.textBoxastaus = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.textBoxaort = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBoxd2a = new System.Windows.Forms.TextBox();
+            this.textBoxanachname = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBoxavorname = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -103,8 +104,7 @@
             this.textBoxtel = new System.Windows.Forms.TextBox();
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.textBoxaGender = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -112,6 +112,7 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.textBoxaGender);
             this.groupBox1.Controls.Add(this.button15);
             this.groupBox1.Controls.Add(this.button14);
             this.groupBox1.Controls.Add(this.button13);
@@ -123,19 +124,18 @@
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.textBoxatel);
-            this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.textBoxaHausNr);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.textBoxaStraße);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.textBoxNickname);
+            this.groupBox1.Controls.Add(this.textBoxaNickname);
             this.groupBox1.Controls.Add(this.textBoxastaus);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.textBoxaort);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.textBoxd2a);
+            this.groupBox1.Controls.Add(this.textBoxanachname);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.textBoxavorname);
             this.groupBox1.Controls.Add(this.button4);
@@ -159,6 +159,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(1131, 101);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(16, 23);
+            this.button15.TabIndex = 107;
+            this.button15.Text = "x";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(965, 88);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(16, 23);
+            this.button14.TabIndex = 106;
+            this.button14.Text = "x";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
             // button13
             // 
@@ -284,14 +304,6 @@
             this.textBoxatel.Size = new System.Drawing.Size(104, 20);
             this.textBoxatel.TabIndex = 98;
             // 
-            // labelGender
-            // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(1117, 59);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(0, 13);
-            this.labelGender.TabIndex = 76;
-            // 
             // textBoxaHausNr
             // 
             this.textBoxaHausNr.Location = new System.Drawing.Point(814, 62);
@@ -346,13 +358,13 @@
             this.label25.TabIndex = 93;
             this.label25.Text = "Straße";
             // 
-            // textBoxNickname
+            // textBoxaNickname
             // 
-            this.textBoxNickname.Location = new System.Drawing.Point(617, 62);
-            this.textBoxNickname.Name = "textBoxNickname";
-            this.textBoxNickname.ReadOnly = true;
-            this.textBoxNickname.Size = new System.Drawing.Size(65, 20);
-            this.textBoxNickname.TabIndex = 73;
+            this.textBoxaNickname.Location = new System.Drawing.Point(617, 62);
+            this.textBoxaNickname.Name = "textBoxaNickname";
+            this.textBoxaNickname.ReadOnly = true;
+            this.textBoxaNickname.Size = new System.Drawing.Size(65, 20);
+            this.textBoxaNickname.TabIndex = 73;
             // 
             // textBoxastaus
             // 
@@ -390,13 +402,13 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBoxd2a
+            // textBoxanachname
             // 
-            this.textBoxd2a.Location = new System.Drawing.Point(343, 62);
-            this.textBoxd2a.Name = "textBoxd2a";
-            this.textBoxd2a.ReadOnly = true;
-            this.textBoxd2a.Size = new System.Drawing.Size(82, 20);
-            this.textBoxd2a.TabIndex = 68;
+            this.textBoxanachname.Location = new System.Drawing.Point(343, 62);
+            this.textBoxanachname.Name = "textBoxanachname";
+            this.textBoxanachname.ReadOnly = true;
+            this.textBoxanachname.Size = new System.Drawing.Size(82, 20);
+            this.textBoxanachname.TabIndex = 68;
             // 
             // button5
             // 
@@ -823,31 +835,19 @@
             this.label26.TabIndex = 100;
             this.label26.Text = "Email";
             // 
-            // button14
+            // textBoxaGender
             // 
-            this.button14.Location = new System.Drawing.Point(965, 88);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(16, 23);
-            this.button14.TabIndex = 106;
-            this.button14.Text = "x";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.Button14_Click);
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(1131, 101);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(16, 23);
-            this.button15.TabIndex = 107;
-            this.button15.Text = "x";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.Button15_Click);
+            this.textBoxaGender.Location = new System.Drawing.Point(1120, 62);
+            this.textBoxaGender.Name = "textBoxaGender";
+            this.textBoxaGender.ReadOnly = true;
+            this.textBoxaGender.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaGender.TabIndex = 108;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.HotPink;
+            this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1540, 540);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBoxemail);
@@ -896,15 +896,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBoxNickname;
+        private System.Windows.Forms.TextBox textBoxaNickname;
         private System.Windows.Forms.TextBox textBoxastaus;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBoxaort;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBoxd2a;
+        private System.Windows.Forms.TextBox textBoxanachname;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBoxavorname;
         private System.Windows.Forms.Button button4;
@@ -972,6 +971,7 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBoxaGender;
     }
 }
 
