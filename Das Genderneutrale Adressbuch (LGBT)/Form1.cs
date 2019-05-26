@@ -265,7 +265,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     streamWriter.WriteLine("");
                 }
                 int anzahl = tabelle.Length;
-                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", true))
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
                 {
 
                     streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
@@ -303,7 +303,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     tabelle[index].Email = textBoxaemail.Text;
                 }
             }
-            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", true))
+            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
             {
 
                 streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
