@@ -13,7 +13,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 {
     public partial class Form1 : Form
     {
-        List<Artikel> liste_Suchergebnisse;
+        List<Artikel> liste_Suchergebnisse = new List<Artikel>();
         int aktuellesSuchErgebnis;
         public int gendernr = 0;
         public struct Postleitzahl
@@ -164,7 +164,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
-            liste_Suchergebnisse = new List<Artikel>();
+            liste_Suchergebnisse.Clear();
             for (int index = 0;index < anzahl;index++)
             {
                 //Suche nach Artikel
@@ -276,8 +276,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 //Aufruf vom Programm save csv
                 savecsv1(@"...\db.csv",
                     textBoxpk.Text,
-                     Convert.ToInt32(textBoxAlter.Text),
-                     Convert.ToInt32(textBoxplz.Text),
+                    Convert.ToInt32(textBoxAlter.Text),
+                    Convert.ToInt32(textBoxplz.Text),
                     Convert.ToString(textBoxvorname.Text),
                     Convert.ToString(textBoxdnachname.Text),
                     Convert.ToString(textBoxort.Text),
@@ -417,7 +417,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void textBoxplz_TextChanged(object sender, EventArgs e)
         {
-
+            textBoxort.Clear();
+            textBoxbund.Clear();
             foreach (Postleitzahl tmp in plz_liste)
             {
                 if (textBoxplz.Text != "")
@@ -426,6 +427,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     {
                         textBoxort.Text = tmp.OrtMitZusatz;
                         textBoxbund.Text = tmp.Bundesland;
+                        break;
                     }
                 }
             }
