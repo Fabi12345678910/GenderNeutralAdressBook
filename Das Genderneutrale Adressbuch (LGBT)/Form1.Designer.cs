@@ -714,7 +714,6 @@
             // 
             this.textBoxort.Location = new System.Drawing.Point(263, 46);
             this.textBoxort.Name = "textBoxort";
-            this.textBoxort.ReadOnly = true;
             this.textBoxort.Size = new System.Drawing.Size(87, 20);
             this.textBoxort.TabIndex = 66;
             // 
@@ -785,7 +784,6 @@
             this.textBoxbund.HideSelection = false;
             this.textBoxbund.Location = new System.Drawing.Point(366, 46);
             this.textBoxbund.Name = "textBoxbund";
-            this.textBoxbund.ReadOnly = true;
             this.textBoxbund.Size = new System.Drawing.Size(118, 20);
             this.textBoxbund.TabIndex = 86;
             // 
