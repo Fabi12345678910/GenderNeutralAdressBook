@@ -134,7 +134,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String tel;
             public String Email;
             
-            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr,string Email)
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße , string HausNr, string tel,string Email)
             {
                 this.id = id;
                 this.Alter = Alter;
@@ -146,8 +146,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.Status = Status;
                 this.nickname = nickname;
                 this.straße = straße;
-                this.tel = tel;
                 this.HausNr = HausNr;
+                this.tel = tel;
                 this.Email = Email;
             }
         }
@@ -391,7 +391,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     tabelle[index].Email = textBoxaemail.Text;
                 }
             }
-            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
+            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false, Encoding.GetEncoding("iso-8859-1")))
             {
 
                 streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
@@ -549,7 +549,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 Pfad = saveFileDialog1.FileName;
             if (Pfad != "")
             {
-                using (StreamWriter streamWriter = new StreamWriter(@Pfad, false))
+                using (StreamWriter streamWriter = new StreamWriter(@Pfad, false, Encoding.GetEncoding("iso-8859-1")))
                 {
 
                     streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
