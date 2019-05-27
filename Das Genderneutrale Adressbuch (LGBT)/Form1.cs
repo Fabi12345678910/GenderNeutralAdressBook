@@ -59,6 +59,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             else
             {
                 timer1.Stop();
+                this.BackgroundImage = new Bitmap(@"...\Pink.jpg");
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -499,7 +500,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+
             InitTimer();
+             
+
         }
     }
   
