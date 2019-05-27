@@ -675,13 +675,14 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Sprachausgabe_gesungen.wav");
                 player.Play();   
         }
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
+      
 
+    /*    private void Form1_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Visitenkarte.wav");
             player.Play();
             e.Cancel = true;
-        }
+        } */
     }
   
 
