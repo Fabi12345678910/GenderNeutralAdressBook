@@ -17,36 +17,41 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         int aktuellesSuchErgebnis;
         public int gendernr = 0;
         public struct Postleitzahl
-
-        
-
         {
             public int PLZ;
             public string OrtMitZusatz;
             public string Bundesland;
-            
+
+            public Postleitzahl(int PLZ, string OrtMitZusatz, string Bundesland)
+            {
+                this.PLZ = PLZ;
+                this.OrtMitZusatz = OrtMitZusatz;
+                this.Bundesland = Bundesland;
+            }
         }
         List<Postleitzahl> plz_liste = new List<Postleitzahl>();
-        public Form1()
+    public Form1()
+        {
+            PLZ_einlesen();
+    }
+        private void PLZ_einlesen()
         {
             string[] zeilen = File.ReadAllLines("...\\plz_de.csv", Encoding.GetEncoding("iso-8859-1"));
-            foreach(string PLZ in zeilen.Skip(1))
+            foreach (string PLZ in zeilen.Skip(1))
             {
-                String[] data = PLZ.Split(';');
                 if (PLZ == "")
                 {
                     continue;
                 }
+                String[] data = PLZ.Split(';');
                 Postleitzahl a = new Postleitzahl();
                 a.PLZ = int.Parse(data[2]);
                 a.OrtMitZusatz = data[0] + data[1];
                 a.Bundesland = data[4];
-                plz_liste.Add(a);
+                plz_liste.Add(new Postleitzahl(int.Parse(data[2]), data[0] + data[1], data[4]));
             }
             InitializeComponent();
-           
-        
-    }
+        }
         private Timer timer1 = new Timer();
         public void InitTimer()
         {
@@ -235,7 +240,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 List<Artikel> artikel = new List<Artikel>();
                 try {
-                    String[] zeilen = File.ReadAllLines(Datei);
+                    String[] zeilen = File.ReadAllLines(Datei, Encoding.GetEncoding("iso-8859-1"));
 
 
                     foreach (String zeile in zeilen.Skip(1))
@@ -420,14 +425,13 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         {
             textBoxort.Clear();
             textBoxbund.Clear();
-            foreach (Postleitzahl tmp in plz_liste)
-            {
-                if (textBoxplz.Text != "")
+            if (textBoxplz.Text != "") { 
+                foreach (Postleitzahl Postleitzahl in plz_liste)
                 {
-                    if (tmp.PLZ == int.Parse(textBoxplz.Text))
+                    if (Postleitzahl.PLZ == int.Parse(textBoxplz.Text))
                     {
-                        textBoxort.Text = tmp.OrtMitZusatz;
-                        textBoxbund.Text = tmp.Bundesland;
+                        textBoxort.Text = Postleitzahl.OrtMitZusatz;
+                        textBoxbund.Text = Postleitzahl.Bundesland;
                         break;
                     }
                 }
