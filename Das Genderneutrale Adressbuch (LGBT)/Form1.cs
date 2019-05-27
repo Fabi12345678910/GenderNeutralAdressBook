@@ -269,7 +269,6 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 catch (Exception)
                 {
                     MessageBox.Show("Nix gefunde oder Uups, da ist was schief gegangen:\n versuchen sie zb Excel zu sclisen"); // Fehler anzeigen
-                                                                                                             
                 }
 
                 return artikel.ToArray();
@@ -291,9 +290,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     Convert.ToString(textBoxlnickname.Text),
                     comboBoxgender.Text, 
                     textBoxstraße.Text,
-                    textBoxaHausNr.Text,
+                    textBoxHausnr.Text,
                     textBoxtel.Text,
-                    textBoxaemail.Text
+                    textBoxemail.Text
                     )
 
                 ;
@@ -307,11 +306,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxlstatus.Text = "";
                 textBoxlnickname.Text = "";
                 comboBoxgender.Text = "";
-                textBoxaemail.Text = "";
+                textBoxemail.Text = "";
                 textBoxstraße.Text = "";
-                textBoxaHausNr.Text = "";
+                textBoxHausnr.Text = "";
                 textBoxtel.Text = "";
-
                 
             } catch 
             {
