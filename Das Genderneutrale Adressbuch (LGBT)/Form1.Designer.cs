@@ -693,7 +693,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 30);
+            this.label1.Location = new System.Drawing.Point(21, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 70;
@@ -859,6 +859,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.textBoxemail);
             this.groupBox2.Controls.Add(this.label13);
@@ -892,7 +893,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1470, 88);
             this.groupBox2.TabIndex = 102;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Suche";
             // 
             // Form1
             // 
