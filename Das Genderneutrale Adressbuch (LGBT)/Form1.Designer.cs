@@ -929,6 +929,7 @@
             this.Controls.Add(this.buttonEingabe);
             this.Name = "Form1";
             this.Text = "LGBT";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxNavigation.ResumeLayout(false);

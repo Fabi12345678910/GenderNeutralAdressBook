@@ -677,7 +677,18 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Sprachausgabe_gesungen.wav");
                 player.Play();   
         }
-      
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Okdaswars.wav");
+                player.Play();
+                System.Threading.Thread.Sleep(1500);
+            }
+            e.Cancel = false;
+        }
     }
   
 
