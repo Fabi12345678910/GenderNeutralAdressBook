@@ -278,7 +278,19 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button1_Click(object sender, EventArgs e)
         {
             //Überprüfung der Eingabe auf Validität
+            string[] zeilen = File.ReadAllLines(@"...\db.csv", Encoding.GetEncoding("iso-8859-1"));
 
+
+            foreach (string zeile in zeilen.Skip(1))
+            {
+                
+                string[] data = zeile.Split(';');
+                if (data[0] == textBoxpk.Text)
+                {
+                    MessageBox.Show("Fehler! ID bereits vorhanden");
+                    return;
+                }
+            }
             try {
                 //Aufruf vom Programm save csv
                 savecsv1(@"...\db.csv",
@@ -313,9 +325,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxHausnr.Text = "";
                 textBoxtel.Text = "";
                 
-            } catch 
+            }
+            catch
             {
-                MessageBox.Show("Fehler! Bitte alle Felder ausfüllen");
+                MessageBox.Show("Fehler! Bitte alle Felder ausfüllen und auf Richtigkeit überprüfen");
                 
             }
             }
