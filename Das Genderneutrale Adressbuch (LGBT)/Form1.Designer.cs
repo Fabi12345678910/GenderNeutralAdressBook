@@ -560,9 +560,9 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(12, 28);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 13);
+            this.label24.Size = new System.Drawing.Size(43, 13);
             this.label24.TabIndex = 40;
-            this.label24.Text = "Id vom User";
+            this.label24.Text = "User-ID";
             // 
             // label12
             // 
