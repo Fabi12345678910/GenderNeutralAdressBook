@@ -378,6 +378,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender,
                     tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
             }
+            MessageBox.Show("Fertig");
         }
 
         private void button3_Click(object sender, EventArgs e)
