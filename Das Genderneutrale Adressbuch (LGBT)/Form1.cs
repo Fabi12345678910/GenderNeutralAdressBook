@@ -33,7 +33,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     public Form1()
         {
             PLZ_einlesen();
-    }
+        }
         private void PLZ_einlesen()
         {
             string[] zeilen = File.ReadAllLines("...\\plz_de.csv", Encoding.GetEncoding("iso-8859-1"));
