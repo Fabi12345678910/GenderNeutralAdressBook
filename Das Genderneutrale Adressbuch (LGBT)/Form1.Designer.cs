@@ -768,14 +768,17 @@
             "Katze",
             "Hund",
             "Mänlich mit Weiblichen geschlechtsmerkmale",
-            "Alex"});
+            "Alex",
+            "Asiate"});
             this.comboBoxgender.Location = new System.Drawing.Point(1175, 46);
             this.comboBoxgender.Name = "comboBoxgender";
             this.comboBoxgender.Size = new System.Drawing.Size(159, 21);
             this.comboBoxgender.TabIndex = 82;
+            this.comboBoxgender.SelectedIndexChanged += new System.EventHandler(this.comboBoxgender_SelectedIndexChanged);
             // 
             // textBoxbund
             // 
+            this.textBoxbund.HideSelection = false;
             this.textBoxbund.Location = new System.Drawing.Point(366, 46);
             this.textBoxbund.Name = "textBoxbund";
             this.textBoxbund.ReadOnly = true;

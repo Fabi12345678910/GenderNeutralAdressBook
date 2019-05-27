@@ -15,8 +15,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     {
         List<Artikel> liste_Suchergebnisse = new List<Artikel>();
         int aktuellesSuchErgebnis;
-        public int gendernr = 0;
-        public struct Postleitzahl
+        public int gendernr = 0; // die Gender Nummar
+        public struct Postleitzahl //Struct PLZ
         {
             public int PLZ;
             public string OrtMitZusatz;
@@ -34,7 +34,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         {
             PLZ_einlesen();
         }
-        private void PLZ_einlesen()
+        private void PLZ_einlesen()//PLZ aus daten bank einlesen
         {
             string[] zeilen = File.ReadAllLines("...\\plz_de.csv", Encoding.GetEncoding("iso-8859-1"));
             foreach (string PLZ in zeilen.Skip(1))
@@ -52,6 +52,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
             InitializeComponent();
         }
+
+        // Fabloues mode
         private Timer timer1 = new Timer();
         public void InitTimer()
         {
@@ -59,14 +61,15 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             timer1.Interval = 2000; // in miliseconds
             if (checkBox1.Checked)
             {
-                timer1.Start();
+                timer1.Start(); // timmer wird gestartet
             }
             else
             {
                 timer1.Stop();
-                this.BackgroundImage = new Bitmap(@"...\Pink.jpg");
+                this.BackgroundImage = new Bitmap(@"...\Pink.jpg"); // Pink kehr zurück
             }
         }
+        // Bilöder auswahl
         private void timer1_Tick(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -113,7 +116,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         }
         string Pfad = string.Empty;
-        //Artikel bedigunen wird erstellt
+        //User bedigunen wird erstellt
         public struct Artikel
 
         {
@@ -148,9 +151,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.Email = Email;
             }
         }
-        public void zeigeAktuellenArtikel()
+        public void zeigeAktuellenArtikel() // Artikel anzeigen
         {
-            Artikel artikel = liste_Suchergebnisse[aktuellesSuchErgebnis];
+            Artikel artikel = liste_Suchergebnisse[aktuellesSuchErgebnis]; 
             labelpk.Text = artikel.id;
             textBoxaalter.Text = Convert.ToString(artikel.Alter);
             textBoxaplz.Text = Convert.ToString(artikel.plz);
@@ -166,15 +169,14 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxaemail.Text = artikel.Email;
             groupBox1.Visible = true;
         }
-        private void buttonEingabe_Click(object sender, EventArgs e)
+        private void buttonEingabe_Click(object sender, EventArgs e) //  Such buton
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
             liste_Suchergebnisse.Clear();
             for (int index = 0;index < anzahl;index++)
             {
-                //Suche nach Artikel
-                //Eingabe über PK
+                //Suche nach User
                 if (textBoxpk.Text == tabelle[index].id 
                     || (textBoxAlter.Text != "" ? textBoxAlter.Text == Convert.ToString(tabelle[index].Alter ) : false)
                     || (textBoxplz.Text != "" ? textBoxplz.Text == Convert.ToString(tabelle[index].plz) : false)
@@ -205,7 +207,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 }
             }
 
-            textBoxAnzahlErgebnisse.Text = Convert.ToString(liste_Suchergebnisse.Count);
+            textBoxAnzahlErgebnisse.Text = Convert.ToString(liste_Suchergebnisse.Count); // Counter von Usern
 
             if (liste_Suchergebnisse.Count > 0)
             {
@@ -215,10 +217,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
             updateNavigationButtons();
             // Error meldungen
-            if (textBoxpk.Text == "" & textBoxAlter.Text == "")
-            {
-                labelerror.Text = "Upsi da ist was schief gelaufen";
-            }
+      
         }
         //User speicher logik
         public static void savecsv1(string filepath, string id, int alter, int plz,
@@ -320,7 +319,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     
         private void button2_Click(object sender, EventArgs e)
         {
-            //Erstelle  streamWriter
+            //Funktion für MAssenspeicher rung
            
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
@@ -328,7 +327,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 Pfad = openFileDialog1.FileName;
             labelerror.Text = Pfad;
             if (Pfad != "")
-            {
+            { 
                 var tabelle = Tabelle.getTabel(Pfad);
                 int index = 0;
                 using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
@@ -338,21 +337,23 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 int anzahl = tabelle.Length;
                 using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
                 {
-
+                    //alles Alte löschen und dafür neue sachen rein machen
                     streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
                         + "Hausnummar" + ";" + "tel" + ";" + "Email");
 
                 }
                 for (; index < anzahl; index++)
                 {
-                    savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                    // Aufrufen von save csv1
+                    savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname, 
                         tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender, 
                         tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel , tabelle[index].Email);
                 }
             }
         }
         private void button10_Click(object sender, EventArgs e)
-        {
+        { 
+            // User updaten
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
             liste_Suchergebnisse = new List<Artikel>();
@@ -361,6 +362,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             {
                 if (labelpk.Text == tabelle[index].id)
                 {
+                    //User wir nach werten abgefragt und geupdatet
                     tabelle[index].Alter = Convert.ToInt32(textBoxaalter.Text);
                     tabelle[index].plz = Convert.ToInt32(textBoxaplz.Text);
                     tabelle[index].vorname = textBoxavorname.Text;
@@ -427,6 +429,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void textBoxplz_TextChanged(object sender, EventArgs e)
         {
+            //PLZ Einlesen aus csv
             textBoxort.Clear();
             textBoxbund.Clear();
             if (textBoxplz.Text != "") { 
@@ -511,6 +514,16 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             InitTimer();
              
 
+        }
+
+        private void comboBoxgender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxgender.Text == "Asiate")
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\not_to_be_racist.wav");
+                player.Play();
+                MessageBox.Show("Rassist????????");                
+            }
         }
     }
   
