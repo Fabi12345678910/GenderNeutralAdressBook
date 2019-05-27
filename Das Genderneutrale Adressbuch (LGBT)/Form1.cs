@@ -276,6 +276,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Überprüfung der Eingabe auf Validität
+
             try {
                 //Aufruf vom Programm save csv
                 savecsv1(@"...\db.csv",
