@@ -224,7 +224,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel ,string Email)
         {
             //Erstelle  streamWriter
-            using (StreamWriter streamWriter = new StreamWriter(filepath, true))
+            using (StreamWriter streamWriter = new StreamWriter(filepath,true, Encoding.GetEncoding("iso-8859-1")))
             {
                 streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" 
                     + Hausnummar + ";" + tel + ";" + Email);
@@ -324,8 +324,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                Pfad = openFileDialog1.FileName;
-            labelerror.Text = Pfad;
+                Pfad = openFileDialog1.FileName;            
             if (Pfad != "")
             { 
                 var tabelle = Tabelle.getTabel(Pfad);
@@ -335,11 +334,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     streamWriter.WriteLine("");
                 }
                 int anzahl = tabelle.Length;
-                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false, Encoding.GetEncoding("iso-8859-1")))
                 {
                     //alles Alte löschen und dafür neue sachen rein machen
                     streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
-                        + "Hausnummar" + ";" + "tel" + ";" + "Email");
+                        + "Hausnummar" + ";" + "tel" + ";" + "Email") ;
 
                 }
                 for (; index < anzahl; index++)
@@ -523,6 +522,38 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\not_to_be_racist.wav");
                 player.Play();
                 MessageBox.Show("Rassist????????");                
+            }
+        }
+
+        private void buttonvesitekarte_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                Pfad = saveFileDialog1.FileName;
+            if (Pfad != "")
+            {
+                using (StreamWriter streamWriter = new StreamWriter(@Pfad, false))
+                {
+
+                    streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                        + "Hausnummar" + ";" + "tel" + ";" + "Email");
+                }
+                savecsv1(@Pfad,
+                    labelpk.Text,
+                    Convert.ToInt32(textBoxaalter.Text),
+                    Convert.ToInt32(textBoxaplz.Text),
+                    Convert.ToString(textBoxavorname.Text),
+                    Convert.ToString(textBoxanachname.Text),
+                    Convert.ToString(textBoxaort.Text),
+                    Convert.ToString(textBoxastaus.Text),
+                    Convert.ToString(textBoxaNickname.Text),
+                    textBoxaGender.Text,
+                    textBoxaStraße.Text,
+                    textBoxaHausNr.Text,
+                    textBoxatel.Text,
+                    textBoxaemail.Text
+                    );
             }
         }
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonvesitekarte = new System.Windows.Forms.Button();
             this.textBoxaGender = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -77,7 +78,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.labelerror = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxlnickname = new System.Windows.Forms.TextBox();
             this.buttonEingabe = new System.Windows.Forms.Button();
@@ -107,6 +107,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -115,6 +116,7 @@
             // groupBox1
             // 
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.buttonvesitekarte);
             this.groupBox1.Controls.Add(this.textBoxaGender);
             this.groupBox1.Controls.Add(this.button15);
             this.groupBox1.Controls.Add(this.button14);
@@ -162,6 +164,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // buttonvesitekarte
+            // 
+            this.buttonvesitekarte.Location = new System.Drawing.Point(151, 164);
+            this.buttonvesitekarte.Name = "buttonvesitekarte";
+            this.buttonvesitekarte.Size = new System.Drawing.Size(101, 23);
+            this.buttonvesitekarte.TabIndex = 109;
+            this.buttonvesitekarte.Text = "Vesitenkarte";
+            this.buttonvesitekarte.UseVisualStyleBackColor = true;
+            this.buttonvesitekarte.Click += new System.EventHandler(this.buttonvesitekarte_Click);
             // 
             // textBoxaGender
             // 
@@ -584,7 +596,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(389, 115);
+            this.button2.Location = new System.Drawing.Point(337, 113);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 85;
@@ -601,14 +613,6 @@
             this.button1.Text = "UserSpeichern";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // labelerror
-            // 
-            this.labelerror.AutoSize = true;
-            this.labelerror.Location = new System.Drawing.Point(495, 125);
-            this.labelerror.Name = "labelerror";
-            this.labelerror.Size = new System.Drawing.Size(0, 13);
-            this.labelerror.TabIndex = 80;
             // 
             // label8
             // 
@@ -852,7 +856,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(482, 119);
+            this.checkBox1.Location = new System.Drawing.Point(462, 119);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(99, 17);
             this.checkBox1.TabIndex = 101;
@@ -909,7 +913,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelerror);
             this.Controls.Add(this.buttonEingabe);
             this.Name = "Form1";
             this.Text = "LGBT";
@@ -954,7 +957,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label labelerror;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxlnickname;
         private System.Windows.Forms.Button buttonEingabe;
@@ -1005,6 +1007,8 @@
         private System.Windows.Forms.TextBox textBoxaGender;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button buttonvesitekarte;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
