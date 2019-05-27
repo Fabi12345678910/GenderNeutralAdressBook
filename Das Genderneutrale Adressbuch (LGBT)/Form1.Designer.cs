@@ -108,6 +108,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.checkBoxSprachausgabe = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -901,12 +902,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Suche";
             // 
+            // checkBoxSprachausgabe
+            // 
+            this.checkBoxSprachausgabe.AutoSize = true;
+            this.checkBoxSprachausgabe.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.checkBoxSprachausgabe.Location = new System.Drawing.Point(590, 117);
+            this.checkBoxSprachausgabe.Name = "checkBoxSprachausgabe";
+            this.checkBoxSprachausgabe.Size = new System.Drawing.Size(107, 18);
+            this.checkBoxSprachausgabe.TabIndex = 103;
+            this.checkBoxSprachausgabe.Text = "Sprachausgabe";
+            this.checkBoxSprachausgabe.UseVisualStyleBackColor = true;
+            this.checkBoxSprachausgabe.CheckedChanged += new System.EventHandler(this.checkBoxSprachausgabe_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1540, 540);
+            this.Controls.Add(this.checkBoxSprachausgabe);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
@@ -1008,6 +1022,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buttonvesitekarte;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox checkBoxSprachausgabe;
     }
 }
 

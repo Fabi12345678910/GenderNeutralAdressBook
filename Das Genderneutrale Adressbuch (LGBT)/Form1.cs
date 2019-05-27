@@ -171,6 +171,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         }
         private void buttonEingabe_Click(object sender, EventArgs e) //  Such buton
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Suchen.wav");
+                player.Play();
+            }
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
             liste_Suchergebnisse.Clear();
@@ -277,6 +282,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\UserSpeichern.wav");
+                player.Play();
+            }
             //Überprüfung der Eingabe auf Validität
             string[] zeilen = File.ReadAllLines(@"...\db.csv", Encoding.GetEncoding("iso-8859-1"));
 
@@ -336,7 +346,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void button2_Click(object sender, EventArgs e)
         {
             //Funktion für MAssenspeicher rung
-           
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Synch.wav");
+                player.Play();
+            }
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -363,7 +377,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
         }
         private void button10_Click(object sender, EventArgs e)
-        { 
+        {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\editieren.wav");
+                player.Play();
+            }
             // User updaten
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
@@ -405,36 +424,71 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaalter.ReadOnly = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaplz.ReadOnly = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxavorname.ReadOnly = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxanachname.ReadOnly = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaort.ReadOnly = false;
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaNickname.ReadOnly = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxastaus.ReadOnly = false;
         }
 
@@ -459,6 +513,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void buttonvorwaerts_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Vorwärts.wav");
+                player.Play();
+            }
             if (aktuellesSuchErgebnis < liste_Suchergebnisse.Count-1)
             {
                 aktuellesSuchErgebnis++;
@@ -469,6 +528,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void buttonzurueck_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Ruckwarts.wav");
+                player.Play();
+            }
             if (aktuellesSuchErgebnis > 0)
             {
                 aktuellesSuchErgebnis--;
@@ -484,26 +548,51 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void Button11_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaStraße.ReadOnly = false;
         }
 
         private void Button12_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaHausNr.ReadOnly = false;
         }
 
         private void Button13_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxatel.ReadOnly = false;       
         }
 
         private void Button14_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             textBoxaemail.ReadOnly = false;
         }
 
         private void Button15_Click(object sender, EventArgs e)
         {
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
+                player.Play();
+            }
             if (gendernr > 0)
             {
                 textBoxaGender.ReadOnly = false;
@@ -521,7 +610,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         //Zugreifen auf den Fabloues mode
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\FabulousMode.wav");
+                player.Play();
+            }
             InitTimer();
              
 
@@ -539,6 +632,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void buttonvesitekarte_Click(object sender, EventArgs e)
         {
+
+            if (checkBoxSprachausgabe.Checked)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Visitenkarte.wav");
+                player.Play();
+            }
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -567,6 +666,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxaemail.Text
                     );
             }
+        }
+
+        private void checkBoxSprachausgabe_CheckedChanged(object sender, EventArgs e)
+        {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Sprachausgabe_gesungen.wav");
+                player.Play();   
         }
     }
   
