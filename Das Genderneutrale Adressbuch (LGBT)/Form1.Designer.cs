@@ -105,6 +105,7 @@
             this.textBoxtel = new System.Windows.Forms.TextBox();
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -843,12 +844,24 @@
             this.label26.TabIndex = 100;
             this.label26.Text = "Email";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(498, 121);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(99, 17);
+            this.checkBox1.TabIndex = 101;
+            this.checkBox1.Text = "Fabulous Mode";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(1540, 540);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label13);
@@ -883,7 +896,7 @@
             this.Controls.Add(this.textBoxAlter);
             this.Controls.Add(this.textBoxpk);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LGBT";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBoxNavigation.ResumeLayout(false);
@@ -972,6 +985,7 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.TextBox textBoxaGender;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

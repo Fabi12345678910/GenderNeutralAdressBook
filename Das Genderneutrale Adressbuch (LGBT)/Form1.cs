@@ -17,7 +17,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         int aktuellesSuchErgebnis;
         public int gendernr = 0;
         public struct Postleitzahl
-      
+
+        
 
         {
             public int PLZ;
@@ -43,6 +44,67 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 plz_liste.Add(a);
             }
             InitializeComponent();
+           
+        
+    }
+        private Timer timer1 = new Timer();
+        public void InitTimer()
+        {
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 2000; // in miliseconds
+            if (checkBox1.Checked)
+            {
+                timer1.Start();
+            }
+            else
+            {
+                timer1.Stop();
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int RandomNumber = rnd.Next(1, 12);
+
+            int caseSwitch = RandomNumber;
+            switch (caseSwitch)
+            {
+                case 1:
+                    this.BackgroundImage = new Bitmap(@"...\fa\602151_1.jpg");
+                    break;
+                case 2:
+                    this.BackgroundImage = new Bitmap(@"...\fa\awrDG51_700b.jpg");
+                    break;
+                case 3:
+                    this.BackgroundImage = new Bitmap(@"...\fa\f86a786110f444087bb568b10870c86d09bcc361.jpg");
+                    break;
+                case 4:
+                    this.BackgroundImage = new Bitmap(@"...\fa\GandalfPink.jpg");
+                    break;
+                case 5:
+                    this.BackgroundImage = new Bitmap(@"...\fa\hellovader.jpg");
+                    break;
+                case 6:
+                    this.BackgroundImage = new Bitmap(@"...\fa\images.jpg");
+                    break;
+                case 7:
+                    this.BackgroundImage = new Bitmap(@"...\fa\imagewrjwes.jpg");
+                    break;
+                case 8:
+                    this.BackgroundImage = new Bitmap(@"...\fa\im-fabulous.jpg");
+                    break;
+                case 9:
+                    this.BackgroundImage = new Bitmap(@"...\fa\toh74rucu3y11.jpg");
+                    break;
+                case 10:
+                    this.BackgroundImage = new Bitmap(@"...\fa\u3x1c.jpg");
+                    break;
+           
+                default:
+                    break;
+
+            }
+
         }
         string Pfad = string.Empty;
         //Artikel bedigunen wird erstellt
@@ -316,6 +378,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender,
                     tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
             }
+            MessageBox.Show("Fertig");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -433,5 +496,13 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 gendernr++;
             }
     }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            InitTimer();
+        }
     }
+  
+
+    
 }
