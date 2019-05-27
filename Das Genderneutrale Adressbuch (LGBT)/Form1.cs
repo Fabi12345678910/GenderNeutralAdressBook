@@ -64,6 +64,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             else
             {
                 timer1.Stop();
+                this.BackgroundImage = new Bitmap(@"...\Pink.jpg");
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -292,7 +293,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxstraße.Text,
                     textBoxaHausNr.Text,
                     textBoxtel.Text,
-                    textBoxaemail.Text)
+                    textBoxaemail.Text
+                    )
 
                 ;
 
@@ -306,6 +308,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxlnickname.Text = "";
                 comboBoxgender.Text = "";
                 textBoxaemail.Text = "";
+                textBoxstraße.Text = "";
+                textBoxaHausNr.Text = "";
+                textBoxtel.Text = "";
+
                 
             } catch 
             {
@@ -503,7 +509,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+
             InitTimer();
+             
+
         }
     }
   
