@@ -1,9 +1,8 @@
-id;alter;plz;vorname;gender;nachname;ort;Status;nickname!;straÃŸe;Hausnummar;tel;Email
-5;2;98756;adolf;himmler;Wolfschanze;hÃ¤ÃŸlich;der Adi8;deutsch;fÃ¼hrerbukenr1;10;10;Hitler@deutscland.com
-10;55;74336;Nico;Klug;Brackenheim;dumm;Nicospock;MÃ¤nlich mit Weiblichen geschlechtsmerkmale;irgenwo;20;30;test@test.com
-1;55;74182;Frank;Elster;Obersulm;weirdo;Franky;Meerschweinchen;WeinstraÃƒÂŸe;30;0223131;test@test.com
-1;2;3;8;7;;9;10;11;4;;6;
-1;2;3;8;7;;9;10;11;4;5;6;12
-11;21;91077;ZÃƒÂ¤nser;Berta;Dormitz;Singel;Zbarter;Weiblein;An der Schule;22;+49727992123;bb@bund.com
-13;25;31091;Kevin;Giselbrat;Coppengrave;Vergeben;KG;MÃƒÂ¤nlein;KirchstaÃƒÂŸe;21;+4918539885;kg@aool.com
-2;17;74336;Koling;Lars;Brackenheim;Vergeben;Larsi;MÃ¤nlein;coole StraÃŸe ;7;+491523675857;Koling@alooa.com
+id;alter;plz;vorname;gender;nachname;ort;Status;nickname!;straße;Hausnummar;tel;Email
+5;2;98756;adolf;himmler;Wolfschanze;häslich;der Adi8;deutsch;führer bunker ;10;10;Hitler@deutscland.com
+10;55;74336;Nico;Klug;Brackenheim;dumm;Nicospock;Mänlein;irgenwo;20;30;test@test.com
+1;55;74182;Frank;Elster;Obersulm;weirdo;Franky;Meerschweinchen;Weinstraße;30;223131;test@test.com
+11;21;91077;Zbarter;Berta;Dormitz;Singel;Zbarter;Weiblein;An der Schule;22;49727992123;bb@bund.com
+13;25;31091;Kevin;Giselbrat;Coppengrave;Vergeben;KG;Mänlein;Kirchstaße;21;4918539885;kg@aool.com
+2;17;74336;Koling;Lars;Brackenheim;Vergeben;Larsi;Mänlein;coole Straße ;7;4,91524E+11;Koling@alooa.com
+3;20;74336;König;Whilhem;Brackenheim;singel;König23;Jesus;Königsstraße;7;+491523553;König@gmai.com
