@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxaGender = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -100,11 +101,10 @@
             this.textBoxstraße = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxHausnr = new System.Windows.Forms.TextBox();
             this.textBoxtel = new System.Windows.Forms.TextBox();
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBoxaGender = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +159,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // textBoxaGender
+            // 
+            this.textBoxaGender.Location = new System.Drawing.Point(1120, 62);
+            this.textBoxaGender.Name = "textBoxaGender";
+            this.textBoxaGender.ReadOnly = true;
+            this.textBoxaGender.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaGender.TabIndex = 108;
             // 
             // button15
             // 
@@ -805,12 +813,12 @@
             this.label14.TabIndex = 90;
             this.label14.Text = "Hausnr";
             // 
-            // textBox1
+            // textBoxHausnr
             // 
-            this.textBox1.Location = new System.Drawing.Point(646, 74);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(24, 20);
-            this.textBox1.TabIndex = 91;
+            this.textBoxHausnr.Location = new System.Drawing.Point(646, 74);
+            this.textBoxHausnr.Name = "textBoxHausnr";
+            this.textBoxHausnr.Size = new System.Drawing.Size(24, 20);
+            this.textBoxHausnr.TabIndex = 91;
             // 
             // textBoxtel
             // 
@@ -835,14 +843,6 @@
             this.label26.TabIndex = 100;
             this.label26.Text = "Email";
             // 
-            // textBoxaGender
-            // 
-            this.textBoxaGender.Location = new System.Drawing.Point(1120, 62);
-            this.textBoxaGender.Name = "textBoxaGender";
-            this.textBoxaGender.ReadOnly = true;
-            this.textBoxaGender.Size = new System.Drawing.Size(100, 20);
-            this.textBoxaGender.TabIndex = 108;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -853,7 +853,7 @@
             this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxtel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxHausnr);
             this.Controls.Add(this.textBoxstraße);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
@@ -959,7 +959,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxHausnr;
         private System.Windows.Forms.TextBox textBoxtel;
         private System.Windows.Forms.Label label911;
         private System.Windows.Forms.Label label27;

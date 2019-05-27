@@ -108,17 +108,17 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 //Suche nach Artikel
                 //Eingabe über PK
                 if (textBoxpk.Text == tabelle[index].id 
-                    || textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
-                    || textBoxplz.Text == Convert.ToString(tabelle[index].plz)
-                    || textBoxvorname.Text == tabelle[index].vorname
-                    || textBoxdnachname.Text == tabelle[index].nachname
-                    || textBoxort.Text == tabelle[index].ort
-                    || textBoxlstatus.Text == tabelle[index].Status
-                    || textBoxlnickname.Text == tabelle[index].nickname
-                    || textBoxstraße.Text == tabelle[index].straße
-                    || textBoxaHausNr.Text == tabelle[index].HausNr
-                    || textBoxaemail.Text == tabelle[index].Email
-                    || textBoxtel.Text == tabelle[index].tel)
+                    || (textBoxAlter.Text != "" ? textBoxAlter.Text == Convert.ToString(tabelle[index].Alter ) : false)
+                    || (textBoxplz.Text != "" ? textBoxplz.Text == Convert.ToString(tabelle[index].plz) : false)
+                    || (textBoxvorname.Text != "" ? textBoxvorname.Text == tabelle[index].vorname : false)
+                    || (textBoxdnachname.Text != "" ? textBoxdnachname.Text == tabelle[index].nachname : false)
+                    || (textBoxort.Text != "" ? textBoxort.Text == tabelle[index].ort : false)
+                    || (textBoxlstatus.Text != "" ? textBoxlstatus.Text == tabelle[index].Status : false)
+                    || (textBoxlnickname.Text != "" ? textBoxlnickname.Text == tabelle[index].nickname : false)
+                    || (textBoxstraße.Text != "" ? textBoxstraße.Text == tabelle[index].straße : false)
+                    || (textBoxHausnr.Text != "" ? textBoxHausnr.Text == tabelle[index].HausNr : false)
+                    || (textBoxemail.Text != "" ? textBoxemail.Text == tabelle[index].Email : false)
+                    || (textBoxtel.Text != "" ? textBoxtel.Text == tabelle[index].tel : false))
                 {
                     liste_Suchergebnisse.Add(new Artikel(
                        tabelle[index].id,
