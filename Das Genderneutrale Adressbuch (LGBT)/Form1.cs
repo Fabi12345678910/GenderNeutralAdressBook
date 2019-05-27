@@ -134,7 +134,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String tel;
             public String Email;
             
-            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr,string Email)
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße , string HausNr, string tel,string Email)
             {
                 this.id = id;
                 this.Alter = Alter;
@@ -146,8 +146,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.Status = Status;
                 this.nickname = nickname;
                 this.straße = straße;
-                this.tel = tel;
                 this.HausNr = HausNr;
+                this.tel = tel;
                 this.Email = Email;
             }
         }
