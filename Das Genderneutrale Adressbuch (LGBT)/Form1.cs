@@ -288,6 +288,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 player.Play();
             }
             //Überprüfung der Eingabe auf Validität
+           
             string[] zeilen = File.ReadAllLines(@"...\db.csv", Encoding.GetEncoding("iso-8859-1"));
 
 
@@ -301,6 +302,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     return;
                 }
             }
+            
             try {
                 //Aufruf vom Programm save csv
                 savecsv1(@"...\db.csv",
@@ -672,6 +674,13 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Sprachausgabe_gesungen.wav");
                 player.Play();   
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Visitenkarte.wav");
+            player.Play();
+            e.Cancel = true;
         }
     }
   
