@@ -288,7 +288,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     textBoxstraße.Text,
                     textBoxaHausNr.Text,
                     textBoxtel.Text,
-                    textBoxaemail.Text)
+                    textBoxaemail.Text
+                    )
 
                 ;
 
@@ -302,6 +303,10 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxlnickname.Text = "";
                 comboBoxgender.Text = "";
                 textBoxaemail.Text = "";
+                textBoxstraße.Text = "";
+                textBoxaHausNr.Text = "";
+                textBoxtel.Text = "";
+
                 
             } catch 
             {
