@@ -13,6 +13,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 {
     public partial class Form1 : Form
     {
+        
         List<Artikel> liste_Suchergebnisse = new List<Artikel>();
         int aktuellesSuchErgebnis;
         public int gendernr = 0; // die Gender Nummar
@@ -33,6 +34,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
     public Form1()
         {
             PLZ_einlesen();
+            this.Icon = new Icon(@"...\42682rainbow_99056.ico");
         }
         private void PLZ_einlesen()//PLZ aus daten bank einlesen
         {
@@ -676,13 +678,6 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 player.Play();   
         }
       
-
-    /*    private void Form1_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Visitenkarte.wav");
-            player.Play();
-            e.Cancel = true;
-        } */
     }
   
 
