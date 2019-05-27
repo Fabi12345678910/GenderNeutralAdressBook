@@ -188,7 +188,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     || (textBoxstraße.Text != "" ? textBoxstraße.Text == tabelle[index].straße : false)
                     || (textBoxHausnr.Text != "" ? textBoxHausnr.Text == tabelle[index].HausNr : false)
                     || (textBoxemail.Text != "" ? textBoxemail.Text == tabelle[index].Email : false)
-                    || (textBoxtel.Text != "" ? textBoxtel.Text == tabelle[index].tel : false))
+                    || (textBoxtel.Text != "" ? textBoxtel.Text == tabelle[index].tel : false)
+                    || (comboBoxgender.Text != "" ? comboBoxgender.Text == tabelle[index].gender :false))
                 {
                     liste_Suchergebnisse.Add(new Artikel(
                        tabelle[index].id,
@@ -314,7 +315,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 
             } catch 
             {
-                MessageBox.Show("Feheler Bittel alle Felder Aufühlen");
+                MessageBox.Show("Fehler! Bitte alle Felder ausfüllen");
                 
             }
             }

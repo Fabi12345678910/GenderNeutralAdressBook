@@ -171,7 +171,7 @@
             this.buttonvesitekarte.Name = "buttonvesitekarte";
             this.buttonvesitekarte.Size = new System.Drawing.Size(101, 23);
             this.buttonvesitekarte.TabIndex = 109;
-            this.buttonvesitekarte.Text = "Vesitenkarte";
+            this.buttonvesitekarte.Text = "Visitenkarte";
             this.buttonvesitekarte.UseVisualStyleBackColor = true;
             this.buttonvesitekarte.Click += new System.EventHandler(this.buttonvesitekarte_Click);
             // 
@@ -187,9 +187,9 @@
             // 
             this.button15.Location = new System.Drawing.Point(1090, 85);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(16, 23);
+            this.button15.Size = new System.Drawing.Size(100, 23);
             this.button15.TabIndex = 107;
-            this.button15.Text = "x";
+            this.button15.Text = "edit";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.Button15_Click);
             // 
@@ -197,9 +197,9 @@
             // 
             this.button14.Location = new System.Drawing.Point(958, 85);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(16, 23);
+            this.button14.Size = new System.Drawing.Size(100, 23);
             this.button14.TabIndex = 106;
-            this.button14.Text = "x";
+            this.button14.Text = "edit";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
@@ -207,19 +207,19 @@
             // 
             this.button13.Location = new System.Drawing.Point(838, 85);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(16, 23);
+            this.button13.Size = new System.Drawing.Size(104, 23);
             this.button13.TabIndex = 105;
-            this.button13.Text = "x";
+            this.button13.Text = "edit";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.Button13_Click);
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(800, 85);
+            this.button12.Location = new System.Drawing.Point(796, 85);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(16, 23);
+            this.button12.Size = new System.Drawing.Size(32, 23);
             this.button12.TabIndex = 104;
-            this.button12.Text = "x";
+            this.button12.Text = "edit";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.Button12_Click);
             // 
@@ -227,9 +227,9 @@
             // 
             this.button11.Location = new System.Drawing.Point(688, 85);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(16, 23);
+            this.button11.Size = new System.Drawing.Size(100, 23);
             this.button11.TabIndex = 103;
-            this.button11.Text = "x";
+            this.button11.Text = "edit";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.Button11_Click);
             // 
@@ -329,19 +329,19 @@
             // 
             // textBoxaHausNr
             // 
-            this.textBoxaHausNr.Location = new System.Drawing.Point(800, 59);
+            this.textBoxaHausNr.Location = new System.Drawing.Point(796, 59);
             this.textBoxaHausNr.Name = "textBoxaHausNr";
             this.textBoxaHausNr.ReadOnly = true;
-            this.textBoxaHausNr.Size = new System.Drawing.Size(24, 20);
+            this.textBoxaHausNr.Size = new System.Drawing.Size(32, 20);
             this.textBoxaHausNr.TabIndex = 97;
             // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(607, 85);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(16, 23);
+            this.button9.Size = new System.Drawing.Size(65, 23);
             this.button9.TabIndex = 75;
-            this.button9.Text = "x";
+            this.button9.Text = "edit";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -366,9 +366,9 @@
             // 
             this.button8.Location = new System.Drawing.Point(526, 85);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(16, 23);
+            this.button8.Size = new System.Drawing.Size(68, 23);
             this.button8.TabIndex = 74;
-            this.button8.Text = "x";
+            this.button8.Text = "edit";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -401,9 +401,9 @@
             // 
             this.button7.Location = new System.Drawing.Point(431, 85);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(16, 23);
+            this.button7.Size = new System.Drawing.Size(79, 23);
             this.button7.TabIndex = 71;
-            this.button7.Text = "x";
+            this.button7.Text = "edit";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -419,9 +419,9 @@
             // 
             this.button6.Location = new System.Drawing.Point(335, 85);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(16, 23);
+            this.button6.Size = new System.Drawing.Size(82, 23);
             this.button6.TabIndex = 69;
-            this.button6.Text = "x";
+            this.button6.Text = "edit";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -437,9 +437,9 @@
             // 
             this.button5.Location = new System.Drawing.Point(254, 85);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(16, 23);
+            this.button5.Size = new System.Drawing.Size(56, 23);
             this.button5.TabIndex = 67;
-            this.button5.Text = "x";
+            this.button5.Text = "edit";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -455,9 +455,9 @@
             // 
             this.button4.Location = new System.Drawing.Point(182, 85);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(16, 23);
+            this.button4.Size = new System.Drawing.Size(46, 23);
             this.button4.TabIndex = 65;
-            this.button4.Text = "x";
+            this.button4.Text = "edit";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -473,9 +473,9 @@
             // 
             this.button3.Location = new System.Drawing.Point(120, 85);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(16, 23);
+            this.button3.Size = new System.Drawing.Size(46, 23);
             this.button3.TabIndex = 63;
-            this.button3.Text = "x";
+            this.button3.Text = "edit";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -758,9 +758,9 @@
             // 
             this.comboBoxgender.FormattingEnabled = true;
             this.comboBoxgender.Items.AddRange(new object[] {
-            "Mänlein",
+            "Männlein",
             "Weiblein",
-            "Atack Helicopter",
+            "Attack Helicopter",
             "Eine Planze",
             "Baum",
             "Der Tot",
@@ -771,7 +771,7 @@
             "Meerschweinchen",
             "Katze",
             "Hund",
-            "Mänlich mit Weiblichen geschlechtsmerkmale",
+            "Mänlich mit weiblichen Geschlechtsmerkmalen",
             "Alex",
             "Asiate"});
             this.comboBoxgender.Location = new System.Drawing.Point(1175, 46);
