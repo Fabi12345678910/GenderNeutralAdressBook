@@ -13,14 +13,17 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 {
     public partial class Form1 : Form
     {
-        List<Artikel> liste_Suchergebnisse;
+        List<Artikel> liste_Suchergebnisse = new List<Artikel>();
         int aktuellesSuchErgebnis;
+        public int gendernr = 0;
         public struct Postleitzahl
+      
 
         {
             public int PLZ;
             public string OrtMitZusatz;
             public string Bundesland;
+            
         }
         List<Postleitzahl> plz_liste = new List<Postleitzahl>();
         public Form1()
@@ -56,11 +59,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             public String Status;
             public String nickname;
             public String straße;
-            public String tel;
             public String HausNr;
-
+            public String tel;
+            public String Email;
             
-            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr )
+            public Artikel(string id, int Alter, int plz, string vorname, string gender, string nachname, string ort, string Status, string nickname ,string straße ,string tel, string HausNr,string Email)
             {
                 this.id = id;
                 this.Alter = Alter;
@@ -74,6 +77,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.straße = straße;
                 this.tel = tel;
                 this.HausNr = HausNr;
+                this.Email = Email;
             }
         }
         public void zeigeAktuellenArtikel()
@@ -83,36 +87,38 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             textBoxaalter.Text = Convert.ToString(artikel.Alter);
             textBoxaplz.Text = Convert.ToString(artikel.plz);
             textBoxavorname.Text = artikel.vorname;
-            textBoxd2a.Text = artikel.nachname;
+            textBoxanachname.Text = artikel.nachname;
             textBoxaort.Text = artikel.ort;
             textBoxastaus.Text = artikel.Status;
-            textBoxNickname.Text = artikel.nickname;
-            labelGender.Text = artikel.gender;
+            textBoxaNickname.Text = artikel.nickname;
+            textBoxaGender.Text = artikel.gender;
             textBoxaStraße.Text = artikel.straße;
             textBoxaHausNr.Text = artikel.HausNr;
             textBoxatel.Text = artikel.tel;
+            textBoxaemail.Text = artikel.Email;
             groupBox1.Visible = true;
         }
         private void buttonEingabe_Click(object sender, EventArgs e)
         {
             var tabelle = Tabelle.getTabel(@"...\db.csv");
             int anzahl = tabelle.Length;
-            liste_Suchergebnisse = new List<Artikel>();
+            liste_Suchergebnisse.Clear();
             for (int index = 0;index < anzahl;index++)
             {
                 //Suche nach Artikel
                 //Eingabe über PK
-                if (textBoxpk.Text == tabelle[index].id
-                    || (textBoxAlter.Text != "" ? textBoxAlter.Text == Convert.ToString(tabelle[index].Alter) : false)
-                    || (textBoxplz.Text !="" ? textBoxplz.Text == Convert.ToString(tabelle[index].plz) : false)
-                    || (textBoxvorname.Text!="" ? textBoxvorname.Text == tabelle[index].vorname : false)
-                    || (textBoxdnachname.Text != "" ? textBoxdnachname.Text == tabelle[index].nachname : false)
-                    || (textBoxort.Text != "" ? textBoxort.Text == tabelle[index].ort : false)
-                    || (textBoxlstatus.Text != "" ? textBoxlstatus.Text == tabelle[index].Status : false)
-                    || (textBoxlnickname.Text != "" ? textBoxlnickname.Text == tabelle[index].nickname : false)
-                    || (textBoxstraße.Text != "" ? textBoxstraße.Text == tabelle[index].straße : false)
-                    || (textBoxaHausNr.Text != "" ? textBoxaHausNr.Text == tabelle[index].HausNr : false)
-                    || (textBoxtel.Text != "" ? textBoxtel.Text == tabelle[index].tel : false))
+                if (textBoxpk.Text == tabelle[index].id 
+                    || textBoxAlter.Text == Convert.ToString(tabelle[index].Alter)
+                    || textBoxplz.Text == Convert.ToString(tabelle[index].plz)
+                    || textBoxvorname.Text == tabelle[index].vorname
+                    || textBoxdnachname.Text == tabelle[index].nachname
+                    || textBoxort.Text == tabelle[index].ort
+                    || textBoxlstatus.Text == tabelle[index].Status
+                    || textBoxlnickname.Text == tabelle[index].nickname
+                    || textBoxstraße.Text == tabelle[index].straße
+                    || textBoxaHausNr.Text == tabelle[index].HausNr
+                    || textBoxaemail.Text == tabelle[index].Email
+                    || textBoxtel.Text == tabelle[index].tel)
                 {
                     liste_Suchergebnisse.Add(new Artikel(
                        tabelle[index].id,
@@ -126,7 +132,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                        tabelle[index].nickname,
                        tabelle[index].straße,
                        tabelle[index].HausNr,
-                       tabelle[index].tel));
+                       tabelle[index].tel,
+                       tabelle[index].Email));
                 }
             }
 
@@ -142,21 +149,23 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             // Error meldungen
             if (textBoxpk.Text == "" & textBoxAlter.Text == "")
             {
-                labelerror.Text = "Artikel Nicht gefunden wollen sie eine Sonder Bessellung";
+                labelerror.Text = "Upsi da ist was schief gelaufen";
             }
         }
-        //Artikle speicher logik
-        public static void savecsv(string filepath, string id, int alter, int plz,
-            string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel )
+        //User speicher logik
+        public static void savecsv1(string filepath, string id, int alter, int plz,
+            string vorname, string gender, string nachname, string ort, string Status, string nickname, string straße, string Hausnummar, string tel ,string Email)
         {
             //Erstelle  streamWriter
             using (StreamWriter streamWriter = new StreamWriter(filepath, true))
             {
-                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" + Hausnummar + ";" + tel);
+                streamWriter.WriteLine(id + ";" + alter + ";" + plz + ";" + vorname + ";" + gender + ";" + nachname + ";" + ort + ";" + Status + ";" + nickname + ";"+ straße + ";" 
+                    + Hausnummar + ";" + tel + ";" + Email);
 
             }
 
         }
+     
         // Speicher in Array
         public static class Tabelle
         {
@@ -184,6 +193,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                         a.straße = data[9];
                         a.HausNr = data[10];
                         a.tel = data[11];
+                        a.Email = data[12];
                         artikel.Add(a);
 
                     }
@@ -202,7 +212,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         {
             try {
                 //Aufruf vom Programm save csv
-                savecsv(@"...\db.csv",
+                savecsv1(@"...\db.csv",
                     textBoxpk.Text,
                     Convert.ToInt32(textBoxAlter.Text),
                     Convert.ToInt32(textBoxplz.Text),
@@ -214,7 +224,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     comboBoxgender.Text, 
                     textBoxstraße.Text,
                     textBoxaHausNr.Text,
-                    textBoxtel.Text)
+                    textBoxtel.Text,
+                    textBoxaemail.Text)
 
                 ;
 
@@ -227,9 +238,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 textBoxlstatus.Text = "";
                 textBoxlnickname.Text = "";
                 comboBoxgender.Text = "";
+                textBoxaemail.Text = "";
+                
             } catch 
             {
                 MessageBox.Show("Feheler Bittel alle Felder Aufühlen");
+                
             }
             }
     
@@ -251,12 +265,56 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     streamWriter.WriteLine("");
                 }
                 int anzahl = tabelle.Length;
+                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
+                {
+
+                    streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                        + "Hausnummar" + ";" + "tel" + ";" + "Email");
+
+                }
                 for (; index < anzahl; index++)
                 {
-                    savecsv(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                    savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
                         tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender, 
-                        tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel);
+                        tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel , tabelle[index].Email);
                 }
+            }
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var tabelle = Tabelle.getTabel(@"...\db.csv");
+            int anzahl = tabelle.Length;
+            liste_Suchergebnisse = new List<Artikel>();
+            int index = 0;
+            for (; index < anzahl; index++)
+            {
+                if (labelpk.Text == tabelle[index].id)
+                {
+                    tabelle[index].Alter = Convert.ToInt32(textBoxaalter.Text);
+                    tabelle[index].plz = Convert.ToInt32(textBoxaplz.Text);
+                    tabelle[index].vorname = textBoxavorname.Text;
+                    tabelle[index].nachname = textBoxanachname.Text;
+                    tabelle[index].ort = textBoxaort.Text;
+                    tabelle[index].Status = textBoxastaus.Text;
+                    tabelle[index].nickname = textBoxaNickname.Text;
+                    tabelle[index].gender = textBoxaGender.Text;
+                    tabelle[index].straße = textBoxaStraße.Text;
+                    tabelle[index].tel = textBoxatel.Text;
+                    tabelle[index].Email = textBoxaemail.Text;
+                }
+            }
+            using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false))
+            {
+
+                streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                    + "Hausnummar" + ";" + "tel" + ";" + "Email");
+
+            }
+            for (index = 0; index < anzahl; index++)
+            {
+                savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
+                    tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender,
+                    tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
             }
         }
 
@@ -277,7 +335,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button6_Click(object sender, EventArgs e)
         {
-            textBoxd2a.ReadOnly = false;
+            textBoxanachname.ReadOnly = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -287,7 +345,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBoxNickname.ReadOnly = false;
+            textBoxaNickname.ReadOnly = false;
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -297,6 +355,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
         private void textBoxplz_TextChanged(object sender, EventArgs e)
         {
+            textBoxort.Clear();
+            textBoxbund.Clear();
             foreach (Postleitzahl tmp in plz_liste)
             {
                 if (textBoxplz.Text != "")
@@ -305,14 +365,12 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     {
                         textBoxort.Text = tmp.OrtMitZusatz;
                         textBoxbund.Text = tmp.Bundesland;
+                        break;
                     }
                 }
             }
         }
-        private void button10_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
 
         private void buttonvorwaerts_Click(object sender, EventArgs e)
         {
@@ -338,5 +396,42 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             buttonvorwaerts.Enabled = !(aktuellesSuchErgebnis >= liste_Suchergebnisse.Count - 1);
             buttonzurueck.Enabled = (aktuellesSuchErgebnis != 0);
         }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            textBoxaStraße.ReadOnly = false;
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            textBoxaHausNr.ReadOnly = false;
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            textBoxatel.ReadOnly = false;       
+        }
+
+        private void Button14_Click(object sender, EventArgs e)
+        {
+            textBoxaemail.ReadOnly = false;
+        }
+
+        private void Button15_Click(object sender, EventArgs e)
+        {
+            if (gendernr > 0)
+            {
+                textBoxaGender.ReadOnly = false;
+            }
+            else
+            {
+                groupBox1.Visible = false;
+                this.BackgroundImage = new Bitmap(@"...\gender.jfif");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Did_you_just_assume_my_gender.wav");
+                player.Play();
+                MessageBox.Show("Did you just assume my gender????????");
+                gendernr++;
+            }
+    }
     }
 }

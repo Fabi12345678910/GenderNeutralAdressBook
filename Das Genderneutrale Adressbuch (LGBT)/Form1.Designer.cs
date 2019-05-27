@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBoxaemail = new System.Windows.Forms.TextBox();
             this.groupBoxNavigation = new System.Windows.Forms.GroupBox();
             this.label911 = new System.Windows.Forms.Label();
             this.textBoxAnzahlErgebnisse = new System.Windows.Forms.TextBox();
@@ -37,19 +44,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.textBoxatel = new System.Windows.Forms.TextBox();
-            this.labelGender = new System.Windows.Forms.Label();
             this.textBoxaHausNr = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.textBoxaStraße = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBoxNickname = new System.Windows.Forms.TextBox();
+            this.textBoxaNickname = new System.Windows.Forms.TextBox();
             this.textBoxastaus = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.textBoxaort = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.textBoxd2a = new System.Windows.Forms.TextBox();
+            this.textBoxanachname = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.textBoxavorname = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -96,29 +102,40 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBoxtel = new System.Windows.Forms.TextBox();
+            this.textBoxemail = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.textBoxaGender = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBoxNavigation.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.groupBox1.Controls.Add(this.textBoxaGender);
+            this.groupBox1.Controls.Add(this.button15);
+            this.groupBox1.Controls.Add(this.button14);
+            this.groupBox1.Controls.Add(this.button13);
+            this.groupBox1.Controls.Add(this.button12);
+            this.groupBox1.Controls.Add(this.button11);
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.textBoxaemail);
             this.groupBox1.Controls.Add(this.groupBoxNavigation);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.textBoxatel);
-            this.groupBox1.Controls.Add(this.labelGender);
             this.groupBox1.Controls.Add(this.textBoxaHausNr);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.textBoxaStraße);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.button8);
             this.groupBox1.Controls.Add(this.label25);
-            this.groupBox1.Controls.Add(this.textBoxNickname);
+            this.groupBox1.Controls.Add(this.textBoxaNickname);
             this.groupBox1.Controls.Add(this.textBoxastaus);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.textBoxaort);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.textBoxd2a);
+            this.groupBox1.Controls.Add(this.textBoxanachname);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.textBoxavorname);
             this.groupBox1.Controls.Add(this.button4);
@@ -137,11 +154,78 @@
             this.groupBox1.Controls.Add(this.label24);
             this.groupBox1.Location = new System.Drawing.Point(32, 241);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1332, 193);
+            this.groupBox1.Size = new System.Drawing.Size(1504, 193);
             this.groupBox1.TabIndex = 82;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Anzeige";
             this.groupBox1.Visible = false;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(1131, 101);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(16, 23);
+            this.button15.TabIndex = 107;
+            this.button15.Text = "x";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.Button15_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(965, 88);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(16, 23);
+            this.button14.TabIndex = 106;
+            this.button14.Text = "x";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.Button14_Click);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(853, 88);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(16, 23);
+            this.button13.TabIndex = 105;
+            this.button13.Text = "x";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.Button13_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(814, 88);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(16, 23);
+            this.button12.TabIndex = 104;
+            this.button12.Text = "x";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(701, 88);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(16, 23);
+            this.button11.TabIndex = 103;
+            this.button11.Text = "x";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(962, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(32, 13);
+            this.label27.TabIndex = 102;
+            this.label27.Text = "Email";
+            // 
+            // textBoxaemail
+            // 
+            this.textBoxaemail.Location = new System.Drawing.Point(965, 62);
+            this.textBoxaemail.Name = "textBoxaemail";
+            this.textBoxaemail.ReadOnly = true;
+            this.textBoxaemail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaemail.TabIndex = 101;
             // 
             // groupBoxNavigation
             // 
@@ -149,7 +233,7 @@
             this.groupBoxNavigation.Controls.Add(this.textBoxAnzahlErgebnisse);
             this.groupBoxNavigation.Controls.Add(this.buttonvorwaerts);
             this.groupBoxNavigation.Controls.Add(this.buttonzurueck);
-            this.groupBoxNavigation.Location = new System.Drawing.Point(1001, 19);
+            this.groupBoxNavigation.Location = new System.Drawing.Point(1393, 16);
             this.groupBoxNavigation.Name = "groupBoxNavigation";
             this.groupBoxNavigation.Size = new System.Drawing.Size(105, 168);
             this.groupBoxNavigation.TabIndex = 90;
@@ -216,21 +300,15 @@
             // 
             this.textBoxatel.Location = new System.Drawing.Point(853, 62);
             this.textBoxatel.Name = "textBoxatel";
+            this.textBoxatel.ReadOnly = true;
             this.textBoxatel.Size = new System.Drawing.Size(104, 20);
             this.textBoxatel.TabIndex = 98;
-            // 
-            // labelGender
-            // 
-            this.labelGender.AutoSize = true;
-            this.labelGender.Location = new System.Drawing.Point(1015, 59);
-            this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(0, 13);
-            this.labelGender.TabIndex = 76;
             // 
             // textBoxaHausNr
             // 
             this.textBoxaHausNr.Location = new System.Drawing.Point(814, 62);
             this.textBoxaHausNr.Name = "textBoxaHausNr";
+            this.textBoxaHausNr.ReadOnly = true;
             this.textBoxaHausNr.Size = new System.Drawing.Size(24, 20);
             this.textBoxaHausNr.TabIndex = 97;
             // 
@@ -248,6 +326,7 @@
             // 
             this.textBoxaStraße.Location = new System.Drawing.Point(701, 62);
             this.textBoxaStraße.Name = "textBoxaStraße";
+            this.textBoxaStraße.ReadOnly = true;
             this.textBoxaStraße.Size = new System.Drawing.Size(100, 20);
             this.textBoxaStraße.TabIndex = 94;
             // 
@@ -279,13 +358,13 @@
             this.label25.TabIndex = 93;
             this.label25.Text = "Straße";
             // 
-            // textBoxNickname
+            // textBoxaNickname
             // 
-            this.textBoxNickname.Location = new System.Drawing.Point(617, 62);
-            this.textBoxNickname.Name = "textBoxNickname";
-            this.textBoxNickname.ReadOnly = true;
-            this.textBoxNickname.Size = new System.Drawing.Size(65, 20);
-            this.textBoxNickname.TabIndex = 73;
+            this.textBoxaNickname.Location = new System.Drawing.Point(617, 62);
+            this.textBoxaNickname.Name = "textBoxaNickname";
+            this.textBoxaNickname.ReadOnly = true;
+            this.textBoxaNickname.Size = new System.Drawing.Size(65, 20);
+            this.textBoxaNickname.TabIndex = 73;
             // 
             // textBoxastaus
             // 
@@ -323,13 +402,13 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // textBoxd2a
+            // textBoxanachname
             // 
-            this.textBoxd2a.Location = new System.Drawing.Point(343, 62);
-            this.textBoxd2a.Name = "textBoxd2a";
-            this.textBoxd2a.ReadOnly = true;
-            this.textBoxd2a.Size = new System.Drawing.Size(82, 20);
-            this.textBoxd2a.TabIndex = 68;
+            this.textBoxanachname.Location = new System.Drawing.Point(343, 62);
+            this.textBoxanachname.Name = "textBoxanachname";
+            this.textBoxanachname.ReadOnly = true;
+            this.textBoxanachname.Size = new System.Drawing.Size(82, 20);
+            this.textBoxanachname.TabIndex = 68;
             // 
             // button5
             // 
@@ -380,7 +459,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1015, 28);
+            this.label10.Location = new System.Drawing.Point(1117, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 0;
@@ -740,12 +819,38 @@
             this.textBoxtel.Size = new System.Drawing.Size(104, 20);
             this.textBoxtel.TabIndex = 92;
             // 
+            // textBoxemail
+            // 
+            this.textBoxemail.Location = new System.Drawing.Point(1391, 74);
+            this.textBoxemail.Name = "textBoxemail";
+            this.textBoxemail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxemail.TabIndex = 99;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(1388, 39);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(32, 13);
+            this.label26.TabIndex = 100;
+            this.label26.Text = "Email";
+            // 
+            // textBoxaGender
+            // 
+            this.textBoxaGender.Location = new System.Drawing.Point(1120, 62);
+            this.textBoxaGender.Name = "textBoxaGender";
+            this.textBoxaGender.ReadOnly = true;
+            this.textBoxaGender.Size = new System.Drawing.Size(100, 20);
+            this.textBoxaGender.TabIndex = 108;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1376, 540);
+            this.BackColor = System.Drawing.Color.Pink;
+            this.ClientSize = new System.Drawing.Size(1540, 540);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxtel);
             this.Controls.Add(this.textBox1);
@@ -791,15 +896,14 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelGender;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TextBox textBoxNickname;
+        private System.Windows.Forms.TextBox textBoxaNickname;
         private System.Windows.Forms.TextBox textBoxastaus;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox textBoxaort;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBoxd2a;
+        private System.Windows.Forms.TextBox textBoxanachname;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBoxavorname;
         private System.Windows.Forms.Button button4;
@@ -858,6 +962,16 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBoxtel;
         private System.Windows.Forms.Label label911;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBoxaemail;
+        private System.Windows.Forms.TextBox textBoxemail;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBoxaGender;
     }
 }
 
