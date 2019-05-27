@@ -345,10 +345,6 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             { 
                 var tabelle = Tabelle.getTabel(Pfad);
                 int index = 0;
-                using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv"))
-                {
-                    streamWriter.WriteLine("");
-                }
                 int anzahl = tabelle.Length;
                 using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false, Encoding.GetEncoding("iso-8859-1")))
                 {
