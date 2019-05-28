@@ -342,8 +342,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             }
             catch
             {
-                MessageBox.Show("Fehler! Bitte alle Felder ausfüllen und auf Richtigkeit überprüfen");
-                
+                MessageBox.Show("Fehler! Bitte alle Felder ausfüllen und auf Richtigkeit überprüfen");                
             }
             }
     
