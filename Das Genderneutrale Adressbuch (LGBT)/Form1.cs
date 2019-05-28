@@ -366,7 +366,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 using (StreamWriter streamWriter = new StreamWriter(@"...\db.csv", false, Encoding.GetEncoding("iso-8859-1")))
                 {
                     //alles Alte löschen und dafür neue sachen rein machen
-                    streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + "Status" + ";" + "nickname!" + ";" + "straße" + ";"
+                    streamWriter.WriteLine("id" + ";" + "alter" + ";" + "plz" + ";" + "vorname" + ";" + "gender" + ";" + "nachname" + ";" + "ort" + ";" + 
+                        "Status" + ";" + "nickname!" + ";" + "straße" + ";"
                         + "Hausnummar" + ";" + "tel" + ";" + "Email") ;
 
                 }
@@ -419,8 +420,9 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
             for (index = 0; index < anzahl; index++)
             {
                 savecsv1(@"...\db.csv", tabelle[index].id, tabelle[index].Alter, tabelle[index].plz, tabelle[index].vorname,
-                    tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, tabelle[index].nickname, tabelle[index].gender,
-                    tabelle[index].straße, tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
+                    tabelle[index].nachname, tabelle[index].ort, tabelle[index].Status, 
+                    tabelle[index].nickname,  tabelle[index].gender, tabelle[index].straße, 
+                    tabelle[index].HausNr, tabelle[index].tel, tabelle[index].Email);
             }
             MessageBox.Show("Fertig");
         }
@@ -576,6 +578,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Userupdaten.wav");
                 player.Play();
             }
+
             textBoxatel.ReadOnly = false;       
         }
 
@@ -606,6 +609,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 this.BackgroundImage = new Bitmap(@"...\gender.jfif");
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Did_you_just_assume_my_gender.wav");
                 player.Play();
+
                 MessageBox.Show("Did you just assume my gender????????");
                 gendernr++;
             }
