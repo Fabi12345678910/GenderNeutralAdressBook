@@ -771,9 +771,7 @@
             "Meerschweinchen",
             "Katze",
             "Hund",
-            "Mänlich mit weiblichen Geschlechtsmerkmalen",
-            "Alex",
-            "Asiate"});
+            "Alex"});
             this.comboBoxgender.Location = new System.Drawing.Point(1175, 46);
             this.comboBoxgender.Name = "comboBoxgender";
             this.comboBoxgender.Size = new System.Drawing.Size(159, 21);
