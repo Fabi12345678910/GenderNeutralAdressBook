@@ -296,6 +296,8 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
 
             foreach (string zeile in zeilen.Skip(1))
             {
+
+                //Valedirung der eingaben MACHENM !!!
                 
                 string[] data = zeile.Split(';');
                 if (data[0] == textBoxpk.Text)
@@ -304,6 +306,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                     return;
                 }
             }
+
             
             try {
                 //Aufruf vom Programm save csv
@@ -678,7 +681,7 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
         private void checkBoxSprachausgabe_CheckedChanged(object sender, EventArgs e)
         {
                 System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"...\Sounds\Sprachausgabe_gesungen.wav");
-                player.Play();   
+                player.PlayLooping();   
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -691,6 +694,11 @@ namespace Das_Genderneutrale_Adressbuch__LGBT_
                 System.Threading.Thread.Sleep(1500);
             }
             e.Cancel = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
   
